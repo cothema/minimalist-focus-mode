@@ -27,14 +27,30 @@
     .disabled {
       background-color: green;
     }
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
     .report-issue {
       margin-top: 15px;
       font-size: 12px;
     }
+    .report-issue a {
+      color: #aaaaaa;
+    }
   </style>
 </head>
 <body>
-<h2>Minimalist Focus Mode</h2>
+<h2>Focus on:</h2>
+<select id="modePicker">
+  <option value="create">🎨 Create</option>
+  <option value="networking">👥 Networking</option>
+  <option value="inspiration">💡 Inspiration</option>
+  <option value="play">🎮 Play</option>
+</select>
 <button id="toggleMode" class="disabled">Enable</button>
 <script src="popup.js"></script>
 <div class="report-issue">
