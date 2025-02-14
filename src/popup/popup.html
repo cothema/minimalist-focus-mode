@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="../style.css">
   <style>
+    body {
+      width: 250px;
+    }
+
+    #popup {
+      border-radius: 5px;
+      background: #222222;
+      padding: 20px;
+    }
+
     h2 {
       margin-top: 0;
       text-align: left;
@@ -78,24 +88,27 @@
   </style>
 </head>
 <body>
-<h2>Focus on:</h2>
-<i class="fas fa-cog settings-icon pointer" id="settingsIcon" title="Settings"></i>
-<div id="modeButtons">
-  <button class="mode-button" data-mode="create">🎨 Creating / Deep Work</button>
-  <button class="mode-button" data-mode="networking">👥 Networking / Friends</button>
-  <button class="mode-button" data-mode="inspiration">💡 Inspiration</button>
-  <button class="mode-button" data-mode="analytics">📈 Analytics</button>
-  <button class="mode-button" data-mode="play">🎮 Fun / Games</button>
-  <button class="mode-button" data-mode="disabled">Disable</button>
-</div>
-<script src="popup.js"></script>
-<div id="dopaminIndex" class="dopamin-index">
-  <div id="dopaminIndexTitle">Dopamin Index <i class="fas fa-question-circle pointer" title="Dopamin Index Explanation"
-                                               id="dopaminInfo"></i></div>
-  <div id="dopaminIndexValue">?</div>
-</div>
-<div class="report-issue">
-  <a href="mailto:ceo+focusmode@cothema.com" target="_blank">Report issue</a>
+<div id="popup">
+  <h2>Focus on:</h2>
+  <i class="fas fa-cog settings-icon pointer" id="settingsIcon" title="Settings"></i>
+  <div id="modeButtons">
+    <button class="mode-button" data-mode="create">🎨 Creating & Deep Work</button>
+    <button class="mode-button" data-mode="networking">👥 Networking & Friends</button>
+    <button class="mode-button" data-mode="inspiration">💡 Inspiration & News</button>
+    <button class="mode-button" data-mode="analytics">📈 Analytics</button>
+    <button class="mode-button" data-mode="play">🎮 Fun & Games</button>
+    <button class="mode-button" data-mode="disabled">Disable</button>
+  </div>
+  <script src="popup.js"></script>
+  <div id="dopaminIndex" class="dopamin-index">
+    <div id="dopaminIndexTitle">Dopamin Index <i class="fas fa-question-circle pointer"
+                                                 title="Dopamin Index Explanation"
+                                                 id="dopaminInfo"></i></div>
+    <div id="dopaminIndexValue">?</div>
+  </div>
+  <div class="report-issue">
+    <a href="mailto:ceo+focusmode@cothema.com" target="_blank">Report issue</a>
+  </div>
 </div>
 </body>
 </html>
