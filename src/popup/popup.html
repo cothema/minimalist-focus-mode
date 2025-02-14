@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Focus Mode</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      width: 200px;
+    }
+    button {
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .enabled {
+      background-color: red;
+    }
+    .disabled {
+      background-color: green;
+    }
+    .report-issue {
+      margin-top: 15px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+<h2>Minimalist Focus Mode</h2>
+<button id="toggleMode" class="disabled">Enable</button>
+<script src="popup.js"></script>
+<div class="report-issue">
+  <a href="mailto:ceo+focusmode@cothema.com" target="_blank">Report issue</a>
+</div>
+</body>
+</html>

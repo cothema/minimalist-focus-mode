@@ -1,0 +1,31 @@
+# EditorConfig is awesome: https://editorconfig.org
+
+# Set default charset and indentation style for all files
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# 2 spaces for indentation in JavaScript/TypeScript/JSON/HTML/CSS
+[*.{js,jsx,ts,tsx,json,html,css,scss}]
+indent_style = space
+indent_size = 2
+
+# YAML specific settings (e.g., for GitHub Actions or other configuration files)
+[*.yml]
+indent_style = space
+indent_size = 2
+
+# Markdown specific settings
+[*.md]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2
+
+# Ignore large files like images or binaries
+[*.{png,jpg,jpeg,gif,svg,ico,lock}]
+insert_final_newline = false
+trim_trailing_whitespace = false
