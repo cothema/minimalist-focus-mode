@@ -18,14 +18,79 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://www.linkedin.com/*"],
+      "matches": ["*://*.linkedin.com/*"],
       "js": ["src/modules/linkedin/mode.js"],
       "run_at": "document_idle"
     },
     {
-      "matches": ["*://www.facebook.com/*"],
+      "matches": ["*://*.facebook.com/*"],
       "js": ["src/modules/facebook/mode.js"],
       "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://*.cnn.com/*",
+        "*://*.bbc.com/*",
+        "*://*.nytimes.com/*",
+        "*://*.foxnews.com/*",
+        "*://*.theguardian.com/*",
+        "*://*.idnes.cz/*",
+        "*://*.novinky.cz/*",
+        "*://*.seznamzpravy.cz/*",
+        "*://*.aktualne.cz/*",
+        "*://*.lidovky.cz/*",
+        "*://*.denik.cz/*",
+        "*://*.respekt.cz/*",
+        "*://*.ihned.cz/*",
+        "*://*.rozhlas.cz/*",
+        "*://*.ceskatelevize.cz/*",
+        "*://*.ct24.ceskatelevize.cz/*",
+        "*://*.tn.nova.cz/*",
+        "*://*.e15.cz/*",
+        "*://*.forum24.cz/*",
+        "*://*.reflex.cz/*",
+        "*://*.tyden.cz/*",
+        "*://*.euro.cz/*",
+        "*://*.blesk.cz/*",
+        "*://*.expres.cz/*"
+      ],
+      "js": ["src/rulesets/news/news.js"]
+    },
+    {
+      "matches": [
+        "*://*.pornhub.com/*",
+        "*://*.xvideos.com/*",
+        "*://*.youporn.com/*",
+        "*://*.redtube.com/*",
+        "*://*.xhamster.com/*",
+        "*://*.porn.com/*",
+        "*://*.tube8.com/*",
+        "*://*.pornmd.com/*",
+        "*://*.spankbang.com/*",
+        "*://*.yespornplease.com/*",
+        "*://*.eporner.com/*",
+        "*://*.pornhd.com/*",
+        "*://*.beeg.com/*",
+        "*://*.hclips.com/*",
+        "*://*.fuq.com/*",
+        "*://*.pornhat.com/*",
+        "*://*.porndoe.com/*",
+        "*://*.vrporn.com/*",
+        "*://*.tnaflix.com/*",
+        "*://*.hardsextube.com/*",
+        "*://*.pornoxo.com/*",
+        "*://*.pornrocket.com/*",
+        "*://*.xtube.com/*",
+        "*://*.empflix.com/*",
+        "*://*.ashemaletube.com/*",
+        "*://*.sex.cz/*",
+        "*://*.freevideo.cz/*",
+        "*://*.ceskypecko.cz/*",
+        "*://*.zakulisi.cz/*",
+        "*://*.pornuj.cz/*",
+        "*://*.amateri.com/*"
+      ],
+      "js": ["src/rulesets/adult/adult.js"]
     }
   ]
 }
