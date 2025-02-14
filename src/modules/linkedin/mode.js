@@ -1,51 +1,79 @@
-const elementsToToggle = {
-  linkedInGames: [".games-entrypoints-module__subheader", ".games-entrypoints-module__puzzle"],
+constParts = {
+  games: [".games-entrypoints-module__subheader", ".games-entrypoints-module__puzzle"],
   adBanners: [".ad-banner-container"],
   footer: ["footer"],
   feedIdentityModule: [".feed-identity-module"],
+  feedFollowsModule: [".feed-follows-module"], // Add to feed recommendations
   myNetworkLink: ["li a[href='https://www.linkedin.com/mynetwork/']"]
 };
 
-function toggleElements(action) {
-  Object.values(elementsToToggle).forEach(selectors => {
-    selectors.forEach(selector => {
-      document.querySelectorAll(selector).forEach(el => {
-        if (action === "hide") {
-          el.style.setProperty("display", "none", "important");
-        } else {
-          el.style.removeProperty("display");
-        }
-      });
+const elementsToToggle = {
+  create: [
+    constParts.games,
+    constParts.adBanners,
+    constParts.footer,
+    constParts.feedIdentityModule,
+    constParts.myNetworkLink,
+    constParts.feedFollowsModule
+  ],
+  networking: [
+    constParts.games,
+    constParts.adBanners,
+    constParts.footer
+  ],
+  inspiration: [
+    constParts.games,
+    constParts.adBanners,
+    constParts.footer,
+    constParts.feedIdentityModule,
+    constParts.myNetworkLink,
+    constParts.feedFollowsModule
+  ],
+  play: [
+    constParts.adBanners,
+    constParts.footer,
+    constParts.feedIdentityModule,
+    constParts.myNetworkLink,
+    constParts.feedFollowsModule
+  ]
+};
+
+function toggleElements(action, mode) {
+  const selectors = elementsToToggle[mode] || [];
+  selectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      if (action === "hide") {
+        el.style.setProperty("display", "none", "important");
+      } else {
+        el.style.removeProperty("display");
+      }
     });
   });
 }
 
 (function () {
-  const hideElements = () => {
-    console.log('Hiding elements.');
-    toggleElements("hide");
+  const hideElements = (mode) => {
+    console.log(`Hiding elements for mode: ${mode}`);
+    toggleElements("hide", mode);
   };
 
-  const showElements = () => {
-    console.log('Showing elements.');
-    toggleElements("show");
+  const showElements = (mode) => {
+    console.log(`Showing elements for mode: ${mode}`);
+    toggleElements("show", mode);
   };
 
-  chrome.storage.sync.get("focusedMode", (data) => {
-    console.log('Focus mode enabled.');
+  chrome.storage.sync.get(["focusedMode", "selectedMode"], (data) => {
     if (data.focusedMode) {
-      hideElements();
+      hideElements(data.selectedMode);
     }
   });
 
   chrome.runtime.onMessage.addListener((request) => {
     if (request.action === "toggleMode") {
       if (request.focused) {
-        console.log('Enabling focus mode.');
-        hideElements();
+        hideElements(request.mode);
       } else {
-        console.log('Disabling focus mode.');
-        showElements();
+        showElements(request.mode);
       }
     }
   });
@@ -53,10 +81,12 @@ function toggleElements(action) {
   const observer = new MutationObserver((mutationsList) => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
-        toggleElements("hide");
+        chrome.storage.sync.get("selectedMode", (data) => {
+          toggleElements("hide", data.selectedMode);
+        });
       }
     }
   });
 
-  observer.observe(document.body, { childList: true, subtree: true });
+  observer.observe(document.body, {childList: true, subtree: true});
 })();
