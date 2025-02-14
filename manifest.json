@@ -21,6 +21,11 @@
       "matches": ["*://www.linkedin.com/*"],
       "js": ["src/modules/linkedin/mode.js"],
       "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://www.facebook.com/*"],
+      "js": ["src/modules/facebook/mode.js"],
+      "run_at": "document_idle"
     }
   ]
 }
