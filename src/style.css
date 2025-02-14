@@ -1,0 +1,155 @@
+html, body {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  width: 200px;
+  background: #222222;
+  color: #ffffff;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: left;
+  color: #aaaaaa;
+}
+
+a {
+  color: #ffffff;
+}
+
+ul {
+  list-style-type: square;
+}
+
+button {
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.menu {
+  width: 250px;
+  background: #333333;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Full height */
+}
+
+.menu-item {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: #aaaaaa;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-text {
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.report-issue {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.report-issue a {
+  color: #aaaaaa;
+}
+
+#modeButtons button {
+  text-align: left;
+}
+
+.mode-button {
+  background-color: white;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.mode-button.enabled,.mode-button.enabled:hover {
+  background-color: #46af2e;
+  color: #ffffff;
+}
+
+.mode-button:hover {
+  background-color: #b1ff9f;
+}
+
+.mode-button[data-mode="disabled"] {
+  background-color: #aa0000;
+  color: white;
+  text-align: center !important;
+}
+
+.settings-icon {
+  font-size: 24px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #aaaaaa;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.settings-icon:hover {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+#dopaminIndex {
+  margin-top: 20px;
+}
+
+#dopaminIndexTitle {
+  color: #aaaaaa;
+}
+
+#dopaminIndexTitle .fas {
+  margin-left: 2px;
+}
+
+#dopaminIndexValue {
+  color: #aaaaaa;
+  margin-top: 5px;
+  font-size: 2em;
+}

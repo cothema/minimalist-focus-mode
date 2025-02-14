@@ -51,16 +51,6 @@ function toggleElements(action, mode) {
     }
   });
 
-  chrome.runtime.onMessage.addListener((request) => {
-    if (request.action === "toggleMode") {
-      if (request.focused) {
-        hideElements(request.mode);
-      } else {
-        showElements(request.mode);
-      }
-    }
-  });
-
   const observer = new MutationObserver((mutationsList) => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {

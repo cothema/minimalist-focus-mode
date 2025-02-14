@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minimalist Focus Mode</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-      width: 200px;
-      background: #222222;
-      color: #ffffff;
+    h2 {
+      margin-top: 0;
+      text-align: left;
+      color: #aaaaaa;
     }
+
+    #modeButtons button {
+      text-align: left;
+    }
+
     button {
       color: white;
       border: none;
@@ -22,39 +26,74 @@
       width: 100%;
       font-size: 14px;
       font-weight: bold;
+      margin-bottom: 10px;
     }
-    .enabled {
-      background-color: red;
+
+    .mode-button {
+      background-color: white;
+      color: black;
+      margin-bottom: 10px;
     }
-    .disabled {
-      background-color: green;
-    }
-    select {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 5px;
-      margin-bottom: 15px;
-    }
+
     .report-issue {
       margin-top: 15px;
       font-size: 12px;
     }
+
     .report-issue a {
       color: #aaaaaa;
+    }
+
+    .settings-icon {
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #aaaaaa;
+    }
+
+    .settings-icon:hover {
+      transform: rotate(90deg);
+      transition: transform 0.3s ease;
+    }
+
+    #dopaminIndex {
+      margin-top: 20px;
+    }
+
+    #dopaminIndexTitle {
+      color: #aaaaaa;
+    }
+
+    #dopaminIndexTitle .fas {
+      margin-left: 2px;
+    }
+
+    #dopaminIndexValue {
+      color: #aaaaaa;
+      margin-top: 5px;
+      font-size: 2em;
     }
   </style>
 </head>
 <body>
 <h2>Focus on:</h2>
-<select id="modePicker">
-  <option value="create">🎨 Create</option>
-  <option value="networking">👥 Networking</option>
-  <option value="inspiration">💡 Inspiration</option>
-  <option value="play">🎮 Play</option>
-</select>
-<button id="toggleMode" class="disabled">Enable</button>
+<i class="fas fa-cog settings-icon pointer" id="settingsIcon" title="Settings"></i>
+<div id="modeButtons">
+  <button class="mode-button" data-mode="create">🎨 Creating / Deep Work</button>
+  <button class="mode-button" data-mode="networking">👥 Networking / Friends</button>
+  <button class="mode-button" data-mode="inspiration">💡 Inspiration</button>
+  <button class="mode-button" data-mode="analytics">📈 Analytics</button>
+  <button class="mode-button" data-mode="play">🎮 Fun / Games</button>
+  <button class="mode-button" data-mode="disabled">Disable</button>
+</div>
 <script src="popup.js"></script>
+<div id="dopaminIndex" class="dopamin-index">
+  <div id="dopaminIndexTitle">Dopamin Index <i class="fas fa-question-circle pointer" title="Dopamin Index Explanation"
+                                               id="dopaminInfo"></i></div>
+  <div id="dopaminIndexValue">?</div>
+</div>
 <div class="report-issue">
   <a href="mailto:ceo+focusmode@cothema.com" target="_blank">Report issue</a>
 </div>
