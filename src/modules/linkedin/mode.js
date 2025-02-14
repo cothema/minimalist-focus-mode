@@ -1,4 +1,4 @@
-constParts = {
+pageParts = {
   games: [".games-entrypoints-module__subheader", ".games-entrypoints-module__puzzle"],
   adBanners: [".ad-banner-container"],
   footer: ["footer"],
@@ -15,50 +15,50 @@ constParts = {
 
 const elementsToToggle = {
   create: [
-    constParts.games,
-    constParts.adBanners,
-    constParts.footer,
-    constParts.feedIdentityModule,
-    constParts.myNetworkLink,
-    constParts.feedFollowsModule,
-    constParts.leftMenu,
-    constParts.msgOverlay,
-    constParts.feed,
-    constParts.topMenu
+    pageParts.games,
+    pageParts.adBanners,
+    pageParts.footer,
+    pageParts.feedIdentityModule,
+    pageParts.myNetworkLink,
+    pageParts.feedFollowsModule,
+    pageParts.leftMenu,
+    pageParts.msgOverlay,
+    pageParts.feed,
+    pageParts.topMenu
   ],
   networking: [
-    constParts.games,
-    constParts.adBanners,
-    constParts.footer,
-    constParts.shareBox,
-    constParts.feed,
-    constParts.sidebarMyPages
+    pageParts.games,
+    pageParts.adBanners,
+    pageParts.footer,
+    pageParts.shareBox,
+    pageParts.feed,
+    pageParts.sidebarMyPages
   ],
   inspiration: [
-    constParts.games,
-    constParts.adBanners,
-    constParts.footer,
-    constParts.feedIdentityModule,
-    constParts.myNetworkLink,
-    constParts.feedFollowsModule,
-    constParts.leftMenu,
-    constParts.msgOverlay,
-    constParts.shareBox,
-    constParts.sidebarMyPages,
-    constParts.topMenu
+    pageParts.games,
+    pageParts.adBanners,
+    pageParts.footer,
+    pageParts.feedIdentityModule,
+    pageParts.myNetworkLink,
+    pageParts.feedFollowsModule,
+    pageParts.leftMenu,
+    pageParts.msgOverlay,
+    pageParts.shareBox,
+    pageParts.sidebarMyPages,
+    pageParts.topMenu
   ],
   play: [
-    constParts.adBanners,
-    constParts.footer,
-    constParts.feedIdentityModule,
-    constParts.myNetworkLink,
-    constParts.feedFollowsModule,
-    constParts.leftMenu,
-    constParts.msgOverlay,
-    constParts.shareBox,
-    constParts.feed,
-    constParts.sidebarMyPages,
-    constParts.topMenu
+    pageParts.adBanners,
+    pageParts.footer,
+    pageParts.feedIdentityModule,
+    pageParts.myNetworkLink,
+    pageParts.feedFollowsModule,
+    pageParts.leftMenu,
+    pageParts.msgOverlay,
+    pageParts.shareBox,
+    pageParts.feed,
+    pageParts.sidebarMyPages,
+    pageParts.topMenu
   ]
 };
 

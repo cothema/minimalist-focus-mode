@@ -6,3 +6,4 @@ extension allows users to toggle focus mode, which hides specific elements.
 ## Supported Websites
 
 - LinkedIn
+- Facebook
