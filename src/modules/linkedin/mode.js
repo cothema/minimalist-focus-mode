@@ -4,7 +4,13 @@ constParts = {
   footer: ["footer"],
   feedIdentityModule: [".feed-identity-module"],
   feedFollowsModule: [".feed-follows-module"], // Add to feed recommendations
-  myNetworkLink: ["li a[href='https://www.linkedin.com/mynetwork/']"]
+  myNetworkLink: ["li a[href='https://www.linkedin.com/mynetwork/']"],
+  leftMenu: [".scaffold-layout__sticky"],
+  msgOverlay: ["#msg-overlay"],
+  shareBox: [".share-box-feed-entry__closed-share-box"],
+  feed: [".scaffold-finite-scroll", ".feed-sort-toggle-dsa__wrapper"],
+  sidebarMyPages: [".org-organization-admin-pages-entrypoint-card__card"],
+  topMenu: [".global-nav__nav"]
 };
 
 const elementsToToggle = {
@@ -14,12 +20,19 @@ const elementsToToggle = {
     constParts.footer,
     constParts.feedIdentityModule,
     constParts.myNetworkLink,
-    constParts.feedFollowsModule
+    constParts.feedFollowsModule,
+    constParts.leftMenu,
+    constParts.msgOverlay,
+    constParts.feed,
+    constParts.topMenu
   ],
   networking: [
     constParts.games,
     constParts.adBanners,
-    constParts.footer
+    constParts.footer,
+    constParts.shareBox,
+    constParts.feed,
+    constParts.sidebarMyPages
   ],
   inspiration: [
     constParts.games,
@@ -27,14 +40,25 @@ const elementsToToggle = {
     constParts.footer,
     constParts.feedIdentityModule,
     constParts.myNetworkLink,
-    constParts.feedFollowsModule
+    constParts.feedFollowsModule,
+    constParts.leftMenu,
+    constParts.msgOverlay,
+    constParts.shareBox,
+    constParts.sidebarMyPages,
+    constParts.topMenu
   ],
   play: [
     constParts.adBanners,
     constParts.footer,
     constParts.feedIdentityModule,
     constParts.myNetworkLink,
-    constParts.feedFollowsModule
+    constParts.feedFollowsModule,
+    constParts.leftMenu,
+    constParts.msgOverlay,
+    constParts.shareBox,
+    constParts.feed,
+    constParts.sidebarMyPages,
+    constParts.topMenu
   ]
 };
 
