@@ -7,3 +7,4 @@ extension allows users to toggle focus mode, which hides specific elements.
 
 - LinkedIn
 - Facebook
+- YouTube

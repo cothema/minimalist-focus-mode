@@ -19,13 +19,18 @@
   "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["src/modules/facebook/mode.js"],
+      "run_at": "document_idle"
+    },
+    {
       "matches": ["*://*.linkedin.com/*"],
       "js": ["src/modules/linkedin/mode.js"],
       "run_at": "document_idle"
     },
     {
-      "matches": ["*://*.facebook.com/*"],
-      "js": ["src/modules/facebook/mode.js"],
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["src/modules/youtube/homepage.js"],
       "run_at": "document_idle"
     },
     {

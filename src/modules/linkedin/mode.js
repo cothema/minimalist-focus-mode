@@ -1,4 +1,4 @@
-pageParts = {
+const pageParts = {
   games: [".games-entrypoints-module__subheader", ".games-entrypoints-module__puzzle"],
   adBanners: [".ad-banner-container"],
   footer: ["footer"],
@@ -13,7 +13,7 @@ pageParts = {
   topMenu: [".global-nav__nav"]
 };
 
-const elementsToToggle = {
+const elementsToHide = {
   create: [
     pageParts.games,
     pageParts.adBanners,
@@ -62,45 +62,31 @@ const elementsToToggle = {
   ]
 };
 
-function toggleElements(action, mode) {
-  const selectors = elementsToToggle[mode] || [];
+function hideElements(mode) {
+  const selectors = elementsToHide[mode] || [];
   selectors.forEach(selector => {
     document.querySelectorAll(selector).forEach(el => {
-      if (action === "hide") {
-        el.style.setProperty("display", "none", "important");
-      } else {
-        el.style.removeProperty("display");
-      }
+      el.style.setProperty("display", "none", "important");
     });
   });
 }
 
 (function () {
-  const hideElements = (mode) => {
-    console.log(`Hiding elements for mode: ${mode}`);
-    toggleElements("hide", mode);
-  };
-
-  const showElements = (mode) => {
-    console.log(`Showing elements for mode: ${mode}`);
-    toggleElements("show", mode);
-  };
-
-  chrome.storage.sync.get(["focusedMode", "selectedMode"], (data) => {
-    if (data.focusedMode) {
+  if (chrome && chrome.storage && chrome.storage.sync) {
+    chrome.storage.sync.get(["selectedMode"], (data) => {
       hideElements(data.selectedMode);
-    }
-  });
+    });
 
-  const observer = new MutationObserver((mutationsList) => {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'childList') {
-        chrome.storage.sync.get("selectedMode", (data) => {
-          toggleElements("hide", data.selectedMode);
-        });
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+          chrome.storage.sync.get("selectedMode", (data) => {
+            hideElements(data.selectedMode);
+          });
+        }
       }
-    }
-  });
+    });
 
-  observer.observe(document.body, {childList: true, subtree: true});
+    observer.observe(document.body, {childList: true, subtree: true});
+  }
 })();
