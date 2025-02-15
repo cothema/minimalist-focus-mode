@@ -1,4 +1,7 @@
-const pageParts = {
+/// <reference types="chrome" />
+import {hideElements, getSelectedMode} from "../../lib/utils.js";
+
+const selectors = {
   games: [".games-entrypoints-module__subheader", ".games-entrypoints-module__puzzle"],
   adBanners: [".ad-banner-container"],
   footer: ["footer"],
@@ -13,80 +16,61 @@ const pageParts = {
   topMenu: [".global-nav__nav"]
 };
 
-const elementsToHide = {
+const modeMappings = {
   create: [
-    pageParts.games,
-    pageParts.adBanners,
-    pageParts.footer,
-    pageParts.feedIdentityModule,
-    pageParts.myNetworkLink,
-    pageParts.feedFollowsModule,
-    pageParts.leftMenu,
-    pageParts.msgOverlay,
-    pageParts.feed,
-    pageParts.topMenu
+    selectors.games,
+    selectors.adBanners,
+    selectors.footer,
+    selectors.feedIdentityModule,
+    selectors.myNetworkLink,
+    selectors.feedFollowsModule,
+    selectors.leftMenu,
+    selectors.msgOverlay,
+    selectors.feed,
+    selectors.topMenu
   ],
   networking: [
-    pageParts.games,
-    pageParts.adBanners,
-    pageParts.footer,
-    pageParts.shareBox,
-    pageParts.feed,
-    pageParts.sidebarMyPages
+    selectors.games,
+    selectors.adBanners,
+    selectors.footer,
+    selectors.shareBox,
+    selectors.feed,
+    selectors.sidebarMyPages
   ],
   inspiration: [
-    pageParts.games,
-    pageParts.adBanners,
-    pageParts.footer,
-    pageParts.feedIdentityModule,
-    pageParts.myNetworkLink,
-    pageParts.feedFollowsModule,
-    pageParts.leftMenu,
-    pageParts.msgOverlay,
-    pageParts.shareBox,
-    pageParts.sidebarMyPages,
-    pageParts.topMenu
+    selectors.games,
+    selectors.adBanners,
+    selectors.footer,
+    selectors.feedIdentityModule,
+    selectors.myNetworkLink,
+    selectors.feedFollowsModule,
+    selectors.leftMenu,
+    selectors.msgOverlay,
+    selectors.shareBox,
+    selectors.sidebarMyPages,
+    selectors.topMenu
   ],
   play: [
-    pageParts.adBanners,
-    pageParts.footer,
-    pageParts.feedIdentityModule,
-    pageParts.myNetworkLink,
-    pageParts.feedFollowsModule,
-    pageParts.leftMenu,
-    pageParts.msgOverlay,
-    pageParts.shareBox,
-    pageParts.feed,
-    pageParts.sidebarMyPages,
-    pageParts.topMenu
+    selectors.adBanners,
+    selectors.footer,
+    selectors.feedIdentityModule,
+    selectors.myNetworkLink,
+    selectors.feedFollowsModule,
+    selectors.leftMenu,
+    selectors.msgOverlay,
+    selectors.shareBox,
+    selectors.feed,
+    selectors.sidebarMyPages,
+    selectors.topMenu
   ]
 };
 
-function hideElements(mode) {
-  const selectors = elementsToHide[mode] || [];
-  selectors.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => {
-      el.style.setProperty("display", "none", "important");
-    });
+getSelectedMode((mode) => {
+  hideElements(modeMappings[mode] || []);
+});
+
+new MutationObserver(() => {
+  getSelectedMode((mode) => {
+    hideElements(modeMappings[mode] || []);
   });
-}
-
-(function () {
-  if (chrome && chrome.storage && chrome.storage.sync) {
-    chrome.storage.sync.get(["selectedMode"], (data) => {
-      hideElements(data.selectedMode);
-    });
-
-    const observer = new MutationObserver((mutationsList) => {
-      for (const mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-          chrome.storage.sync.get("selectedMode", (data) => {
-            hideElements(data.selectedMode);
-          });
-        }
-      }
-    });
-
-    observer.observe(document.body, {childList: true, subtree: true});
-  }
-})();
+}).observe(document.body, {childList: true, subtree: true});

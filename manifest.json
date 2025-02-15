@@ -3,34 +3,111 @@
   "name": "Minimalist Focus Mode for Deep Work – Stay Focused, Stay Productive",
   "version": "0.1",
   "description": "A Chrome extension that hides distracting elements to help users stay focused.",
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "background": {
-    "service_worker": "src/background.js",
+    "service_worker": "background.bundle.js",
     "type": "module"
   },
   "action": {
-    "default_popup": "src/popup/popup.html",
+    "default_popup": "popup/popup.html",
+    "default_title": "Minimalist Focus Mode Extension",
     "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
     }
   },
-  "host_permissions": ["<all_urls>"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "options_page": "settings/settings.html",
+  "host_permissions": [
+    "*://*.facebook.com/*",
+    "*://*.linkedin.com/*",
+    "*://*.youtube.com/*",
+    "*://*.cnn.com/*",
+    "*://*.bbc.com/*",
+    "*://*.nytimes.com/*",
+    "*://*.foxnews.com/*",
+    "*://*.theguardian.com/*",
+    "*://*.idnes.cz/*",
+    "*://*.novinky.cz/*",
+    "*://*.seznamzpravy.cz/*",
+    "*://*.aktualne.cz/*",
+    "*://*.lidovky.cz/*",
+    "*://*.denik.cz/*",
+    "*://*.respekt.cz/*",
+    "*://*.ihned.cz/*",
+    "*://*.rozhlas.cz/*",
+    "*://*.ceskatelevize.cz/*",
+    "*://*.tn.nova.cz/*",
+    "*://*.e15.cz/*",
+    "*://*.forum24.cz/*",
+    "*://*.reflex.cz/*",
+    "*://*.tyden.cz/*",
+    "*://*.euro.cz/*",
+    "*://*.blesk.cz/*",
+    "*://*.expres.cz/*",
+    "*://*.pornhub.com/*",
+    "*://*.xvideos.com/*",
+    "*://*.youporn.com/*",
+    "*://*.redtube.com/*",
+    "*://*.xhamster.com/*",
+    "*://*.porn.com/*",
+    "*://*.tube8.com/*",
+    "*://*.pornmd.com/*",
+    "*://*.spankbang.com/*",
+    "*://*.yespornplease.com/*",
+    "*://*.eporner.com/*",
+    "*://*.pornhd.com/*",
+    "*://*.beeg.com/*",
+    "*://*.hclips.com/*",
+    "*://*.fuq.com/*",
+    "*://*.pornhat.com/*",
+    "*://*.porndoe.com/*",
+    "*://*.vrporn.com/*",
+    "*://*.tnaflix.com/*",
+    "*://*.hardsextube.com/*",
+    "*://*.pornoxo.com/*",
+    "*://*.pornrocket.com/*",
+    "*://*.xtube.com/*",
+    "*://*.empflix.com/*",
+    "*://*.ashemaletube.com/*",
+    "*://*.sex.cz/*",
+    "*://*.freevideo.cz/*",
+    "*://*.ceskypecko.cz/*",
+    "*://*.zakulisi.cz/*",
+    "*://*.pornuj.cz/*",
+    "*://*.amateri.com/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://*.facebook.com/*"],
-      "js": ["src/modules/facebook/mode.js"],
+      "matches": [
+        "*://*.facebook.com/*"
+      ],
+      "js": [
+        "facebook.bundle.js"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["*://*.linkedin.com/*"],
-      "js": ["src/modules/linkedin/mode.js"],
+      "matches": [
+        "*://*.linkedin.com/*"
+      ],
+      "js": [
+        "linkedin.bundle.js"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["*://*.youtube.com/*"],
-      "js": ["src/modules/youtube/homepage.js"],
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "youtube.bundle.js"
+      ],
       "run_at": "document_idle"
     },
     {
@@ -59,7 +136,9 @@
         "*://*.blesk.cz/*",
         "*://*.expres.cz/*"
       ],
-      "js": ["src/rulesets/news/news.js"]
+      "js": [
+        "news.bundle.js"
+      ]
     },
     {
       "matches": [
@@ -95,7 +174,9 @@
         "*://*.pornuj.cz/*",
         "*://*.amateri.com/*"
       ],
-      "js": ["src/rulesets/adult/adult.js"]
+      "js": [
+        "adult.bundle.js"
+      ]
     }
   ]
 }
