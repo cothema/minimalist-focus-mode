@@ -1,10 +1,18 @@
+/// <reference types="chrome" />
+import {library, dom} from '@fortawesome/fontawesome-svg-core';
+import {faCog} from "@fortawesome/free-solid-svg-icons/faCog";
+import {faQuestionCircle} from "@fortawesome/free-solid-svg-icons/faQuestionCircle";
+
+library.add(faCog, faQuestionCircle);
+dom.watch();
+
 document.addEventListener("DOMContentLoaded", () => {
   const modeButtons = document.querySelectorAll(".mode-button");
   const settingsIcon = document.getElementById("settingsIcon");
   const dopaminInfo = document.getElementById("dopaminInfo");
   const dopaminIndex = document.getElementById("dopaminIndexValue");
 
-  chrome.storage.sync.get(["selectedMode"], (data) => {
+  chrome.storage.sync.get(["selectedMode"], (data: any) => {
     const selectedMode = data.selectedMode || "disabled";
     updateDopaminIndex(selectedMode);
     highlightSelectedMode(selectedMode);
@@ -24,15 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  settingsIcon.addEventListener("click", () => {
-    chrome.tabs.create({url: "src/settings/settings.html"});
-  });
-
-  dopaminInfo.addEventListener("click", () => {
-    chrome.tabs.create({url: "src/settings/settings.html"});
-  });
-
-  function updateDopaminIndex(mode) {
+  function updateDopaminIndex(mode: string) {
     let index = 0;
     switch (mode) {
       case "create":
@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
     dopaminIndex.style.color = `rgb(${255 - (index * 2.55)}, ${index * 2.55}, 0)`;
   }
 
-  function highlightSelectedMode(mode) {
-    modeButtons.forEach(button => {
+  function highlightSelectedMode(mode: string) {
+    modeButtons.forEach((button: any) => {
       button.classList.toggle("enabled", button.getAttribute("data-mode") === mode);
 
       const isDisabled = button.getAttribute("data-mode") === "disabled";
@@ -65,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function updateExtensionIcon(mode) {
-    let iconPath = `../../icons/mode/${mode}.png`;
+  function updateExtensionIcon(mode: string) {
+    let iconPath = `../assets/icons/mode/${mode}.png`;
     chrome.action.setIcon({path: iconPath});
   }
 });

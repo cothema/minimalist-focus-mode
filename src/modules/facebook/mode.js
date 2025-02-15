@@ -1,49 +1,35 @@
-const pageParts = {
+/// <reference types="chrome" />
+import {hideElements, getSelectedMode} from "../../lib/utils.js";
+
+const selectors = {
   stories: [`[aria-label="stories tray"]`],
   footer: [`footer`],
 };
 
-const elementsToHide = {
+const modeMappings = {
   create: [
-    pageParts.stories,
-    pageParts.footer
+    selectors.stories,
+    selectors.footer
   ],
   networking: [
-    pageParts.stories,
-    pageParts.footer
+    selectors.stories,
+    selectors.footer
   ],
   inspiration: [
-    pageParts.footer
+    selectors.footer
   ],
   play: [
-    pageParts.stories,
-    pageParts.footer
+    selectors.stories,
+    selectors.footer
   ]
 };
 
-function hideElements(mode) {
-  const selectors = elementsToHide[mode] || [];
-  selectors.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => {
-      el.style.setProperty("display", "none", "important");
-    });
-  });
-}
+getSelectedMode((mode) => {
+  hideElements(modeMappings[mode] || []);
+});
 
-(function () {
-  chrome.storage.sync.get(["selectedMode"], (data) => {
-    hideElements(data.selectedMode);
+new MutationObserver(() => {
+  getSelectedMode((mode) => {
+    hideElements(modeMappings[mode] || []);
   });
-
-  const observer = new MutationObserver((mutationsList) => {
-    for (const mutation of mutationsList) {
-      if (mutation.type === 'childList') {
-        chrome.storage.sync.get("selectedMode", (data) => {
-          hideElements(data.selectedMode);
-        });
-      }
-    }
-  });
-
-  observer.observe(document.body, {childList: true, subtree: true});
-})();
+}).observe(document.body, {childList: true, subtree: true});

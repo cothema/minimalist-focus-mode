@@ -1,7 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html, body {
   margin: 0;
 }
-
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -63,10 +66,10 @@ select {
   margin: 10px 0;
   font-size: 14px;
   cursor: pointer;
-}
 
-.menu-item:hover {
-  color: #aaaaaa;
+  &:hover {
+    color: #aaaaaa;
+  }
 }
 
 .content {
@@ -86,10 +89,10 @@ select {
 .report-issue {
   margin-top: 15px;
   font-size: 12px;
-}
 
-.report-issue a {
-  color: #aaaaaa;
+  a {
+    color: #aaaaaa;
+  }
 }
 
 #modeButtons button {
@@ -100,21 +103,21 @@ select {
   background-color: white;
   color: black;
   margin-bottom: 10px;
-}
 
-.mode-button.enabled,.mode-button.enabled:hover {
-  background-color: #46af2e;
-  color: #ffffff;
-}
+  &.enabled, &.enabled:hover {
+    background-color: #46af2e;
+    color: #ffffff;
+  }
 
-.mode-button:hover {
-  background-color: #b1ff9f;
-}
+  &:hover {
+    background-color: #b1ff9f;
+  }
 
-.mode-button[data-mode="disabled"] {
-  background-color: #aa0000;
-  color: white;
-  text-align: center !important;
+  &[data-mode="disabled"] {
+    background-color: #aa0000;
+    color: white;
+    text-align: center !important;
+  }
 }
 
 .settings-icon {
@@ -123,15 +126,15 @@ select {
   top: 20px;
   right: 20px;
   color: #aaaaaa;
+
+  &:hover {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
 }
 
 .pointer {
   cursor: pointer;
-}
-
-.settings-icon:hover {
-  transform: rotate(90deg);
-  transition: transform 0.3s ease;
 }
 
 #dopaminIndex {
@@ -140,10 +143,10 @@ select {
 
 #dopaminIndexTitle {
   color: #aaaaaa;
-}
 
-#dopaminIndexTitle .fas {
-  margin-left: 2px;
+  .fas {
+    margin-left: 2px;
+  }
 }
 
 #dopaminIndexValue {

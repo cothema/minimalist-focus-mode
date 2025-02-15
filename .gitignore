@@ -1,2 +1,7 @@
+/dist
+/output
+/node_modules
+/*.log
+
 # IDE
 /.idea

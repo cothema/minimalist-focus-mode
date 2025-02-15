@@ -1,0 +1,56 @@
+{
+  "name": "minimalist-focus-mode",
+  "version": "1.0.0",
+  "description": "A Chrome extension that hides distracting elements to help users stay focused.",
+  "main": "src/background.js",
+  "scripts": {
+    "watch": "webpack --watch --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "ai": "webpack --config webpack.ai.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cothema/minimalist-focus-mode.git"
+  },
+  "keywords": [
+    "focus",
+    "deep",
+    "work",
+    "chrome",
+    "extension"
+  ],
+  "author": "Cothema s.r.o.",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cothema/minimalist-focus-mode/issues"
+  },
+  "homepage": "https://github.com/cothema/minimalist-focus-mode#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@tailwindcss/postcss": "^4.0.6"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.304",
+    "autoprefixer": "^10.4.20",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.2",
+    "postcss": "^8.5.2",
+    "postcss-loader": "^8.1.1",
+    "sass": "^1.85.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^4.0.6",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0",
+    "webpack-merge": "^6.0.1",
+    "zip-webpack-plugin": "^4.0.3"
+  }
+}

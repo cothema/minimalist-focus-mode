@@ -1,5 +1,7 @@
+/// <reference types="chrome" />
+
 function blockAdultPages() {
-  chrome.storage.sync.get(["selectedMode"], (data) => {
+  chrome.storage.sync.get(["selectedMode"], (data: any) => {
     const selectedMode = data.selectedMode;
     if (["create", "networking", "analytics", "inspiration"].includes(selectedMode)) {
       document.body.innerHTML = "<h1>Blocked</h1><p>This page is blocked to help you stay focused.</p><p>Change your mode in the extension Minimalist Focus Mode to access this page.</p>";
