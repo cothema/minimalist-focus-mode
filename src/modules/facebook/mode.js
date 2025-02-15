@@ -1,9 +1,9 @@
-pageParts = {
+const pageParts = {
   stories: [`[aria-label="stories tray"]`],
   footer: [`footer`],
 };
 
-const elementsToToggle = {
+const elementsToHide = {
   create: [
     pageParts.stories,
     pageParts.footer
@@ -21,41 +21,25 @@ const elementsToToggle = {
   ]
 };
 
-function toggleElements(action, mode) {
-  const selectors = elementsToToggle[mode] || [];
+function hideElements(mode) {
+  const selectors = elementsToHide[mode] || [];
   selectors.forEach(selector => {
     document.querySelectorAll(selector).forEach(el => {
-      if (action === "hide") {
-        el.style.setProperty("display", "none", "important");
-      } else {
-        el.style.removeProperty("display");
-      }
+      el.style.setProperty("display", "none", "important");
     });
   });
 }
 
 (function () {
-  const hideElements = (mode) => {
-    console.log(`Hiding elements for mode: ${mode}`);
-    toggleElements("hide", mode);
-  };
-
-  const showElements = (mode) => {
-    console.log(`Showing elements for mode: ${mode}`);
-    toggleElements("show", mode);
-  };
-
-  chrome.storage.sync.get(["focusedMode", "selectedMode"], (data) => {
-    if (data.focusedMode) {
-      hideElements(data.selectedMode);
-    }
+  chrome.storage.sync.get(["selectedMode"], (data) => {
+    hideElements(data.selectedMode);
   });
 
   const observer = new MutationObserver((mutationsList) => {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
         chrome.storage.sync.get("selectedMode", (data) => {
-          toggleElements("hide", data.selectedMode);
+          hideElements(data.selectedMode);
         });
       }
     }
