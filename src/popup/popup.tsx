@@ -28,11 +28,22 @@ const DOPAMIN_INDEX: Record<Mode, number> = {
 
 const Popup: React.FC = () => {
   const [selectedMode, setSelectedMode] = useState<Mode>("disabled");
+  const [availableModes, setAvailableModes] = useState<Record<Mode, boolean>>({
+    create: true,
+    networking: false,
+    analytics: false,
+    inspiration: false,
+    play: false,
+    disabled: true,
+  });
 
   useEffect(() => {
-    chrome.storage.sync.get(["selectedMode"], (data: { selectedMode?: Mode }) => {
+    chrome.storage.sync.get(["selectedMode", "modeSettings"], (data: { selectedMode?: Mode; modeSettings?: Record<Mode, boolean> }) => {
       const mode = data.selectedMode || "disabled";
       setSelectedMode(mode);
+      if (data.modeSettings) {
+        setAvailableModes({ ...data.modeSettings, disabled: true });
+      }
       updateDopaminIndex(mode);
       highlightSelectedMode(mode);
       updateExtensionIcon(mode);
@@ -77,7 +88,7 @@ const Popup: React.FC = () => {
         <FontAwesomeIcon icon={faCog} className="settings-icon pointer" title="Settings" />
       </a>
       <div id="modeButtons">
-        {MODES.map(({ mode, emoji, label }) => (
+        {MODES.filter(({ mode }) => availableModes[mode]).map(({ mode, emoji, label }) => (
           <button
             key={mode}
             data-mode={mode}
