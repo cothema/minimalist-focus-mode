@@ -1,7 +1,15 @@
 /// <reference types="chrome" />
-import {hideElements, getSelectedMode} from "../../lib/utils.js";
+import { hideElements, getSelectedMode } from "../../lib/utils";
 
-const selectors = {
+type Selectors = {
+  [key: string]: string[];
+};
+
+type ModeMappings = {
+  [key: string]: string[][];
+};
+
+const selectors: Selectors = {
   games: [".games-entrypoints-module__subheader", ".games-entrypoints-module__puzzle"],
   adBanners: [".ad-banner-container"],
   footer: ["footer"],
@@ -16,7 +24,7 @@ const selectors = {
   topMenu: [".global-nav__nav"]
 };
 
-const modeMappings = {
+const modeMappings: ModeMappings = {
   create: [
     selectors.games,
     selectors.adBanners,
@@ -65,12 +73,12 @@ const modeMappings = {
   ]
 };
 
-getSelectedMode((mode) => {
+getSelectedMode((mode: keyof ModeMappings) => {
   hideElements(modeMappings[mode] || []);
 });
 
 new MutationObserver(() => {
-  getSelectedMode((mode) => {
+  getSelectedMode((mode: keyof ModeMappings) => {
     hideElements(modeMappings[mode] || []);
   });
-}).observe(document.body, {childList: true, subtree: true});
+}).observe(document.body, { childList: true, subtree: true });
