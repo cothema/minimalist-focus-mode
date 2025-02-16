@@ -1,0 +1,46 @@
+{
+  "extensionName": {
+    "message": "Minimalist Focus Mode for Deep Work – Stay Focused, Stay Productive",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "A Chrome extension that hides distracting elements to help users stay focused.",
+    "description": "Description of the extension"
+  },
+  "dopaminIndex": {
+    "message": "Dopamin Index",
+    "description": "Title of the Dopamin Index"
+  },
+  "reportIssue": {
+    "message": "Report Issue",
+    "description": "Report Issue Link"
+  },
+  "modeCreate": {
+    "message": "Creating & Deep Work",
+    "description": "Create mode"
+  },
+  "modeNetworking": {
+    "message": "Networking & Friends",
+    "description": "Networking mode"
+  },
+  "modeAnalytics": {
+    "message": "Analytics",
+    "description": "Analytics mode"
+  },
+  "modeInspiration": {
+    "message": "Inspiration & News",
+    "description": "Inspiration mode"
+  },
+  "modePlay": {
+    "message": "Fun & Games",
+    "description": "Play mode"
+  },
+  "buttonDisable": {
+    "message": "Disable",
+    "description": "Disable button"
+  },
+  "focusOn": {
+    "message": "Focus on",
+    "description": "Focus on mode (title)"
+  }
+}

@@ -2,18 +2,19 @@ import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCog, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
+import {t} from "../lib/i18n";
 
 declare const chrome: any;
 
 type Mode = "create" | "networking" | "analytics" | "inspiration" | "play" | "disabled";
 
 const MODES: { mode: Mode; emoji?: string; label: string }[] = [
-  { mode: "create", emoji: "🎨", label: "Creating & Deep Work" },
-  { mode: "networking", emoji: "🤝", label: "Networking & Friends" },
-  { mode: "analytics", emoji: "📊", label: "Analytics" },
-  { mode: "inspiration", emoji: "💡", label: "Inspiration & News" },
-  { mode: "play", emoji: "🎮", label: "Fun & Games" },
-  { mode: "disabled", label: "Disable" },
+  { mode: "create", emoji: "🎨", label: t('modeCreate') },
+  { mode: "networking", emoji: "🤝", label: t('modeNetworking') },
+  { mode: "analytics", emoji: "📊", label: t('modeAnalytics') },
+  { mode: "inspiration", emoji: "💡", label: t('modeInspiration') },
+  { mode: "play", emoji: "🎮", label: t('modePlay') },
+  { mode: "disabled", label: t('buttonDisable') },
 ];
 
 const DOPAMIN_INDEX: Record<Mode, number> = {
@@ -71,7 +72,7 @@ const Popup: React.FC = () => {
 
   return (
     <div>
-      <h2>Focus on:</h2>
+      <h2>{t('focusOn')}:</h2>
       <a href="/settings/settings.html" target="_blank">
         <FontAwesomeIcon icon={faCog} className="settings-icon pointer" title="Settings" />
       </a>
@@ -90,15 +91,14 @@ const Popup: React.FC = () => {
       </div>
       <div id="dopaminIndex" className="dopamin-index">
         <div id="dopaminIndexTitle">
-          Dopamin Index
-          <a href="/settings/settings.html" target="_blank">
+          {t('dopaminIndex')} <a href="/settings/settings.html" target="_blank">
             <FontAwesomeIcon icon={faQuestionCircle} className="pointer" title="Dopamin Index Explanation" />
           </a>
         </div>
         <div id="dopaminIndexValue">?</div>
       </div>
       <div className="report-issue">
-        <a href="mailto:ceo+focusmode@cothema.com" target="_blank">Report issue</a>
+        <a href="mailto:ceo+focusmode@cothema.com" target="_blank">{t('reportIssue')}</a>
       </div>
     </div>
   )

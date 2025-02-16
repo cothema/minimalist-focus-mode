@@ -1,14 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Minimalist Focus Mode for Deep Work – Stay Focused, Stay Productive",
+  "name": "__MSG_extensionName__",
   "version": "0.2",
-  "description": "A Chrome extension that hides distracting elements to help users stay focused.",
+  "description": "__MSG_extensionDescription__",
   "permissions": [
     "storage"
   ],
+  "default_locale": "en",
   "background": {
-    "service_worker": "background.bundle.js",
-    "type": "module"
+    "service_worker": "background.bundle.js"
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
   },
   "action": {
     "default_popup": "popup/popup.html",

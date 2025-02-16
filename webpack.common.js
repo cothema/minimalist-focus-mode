@@ -32,6 +32,7 @@ module.exports = {
         { from: 'manifest.json', to: '.' },
         { from: '**/*.html', to: '.', context: 'src' },
         { from: 'assets', to: './assets' },
+        { from: '_locales', to: './_locales' },
       ]
     }),
     new MiniCssExtractPlugin({

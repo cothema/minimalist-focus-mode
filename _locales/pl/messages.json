@@ -1,0 +1,46 @@
+{
+  "extensionName": {
+    "message": "Minimalistyczny Tryb Skupienia – Skup się, bądź produktywny",
+    "description": "Nazwa rozszerzenia"
+  },
+  "extensionDescription": {
+    "message": "Rozszerzenie Chrome, które ukrywa rozpraszające elementy i pomaga użytkownikom skupić się.",
+    "description": "Opis rozszerzenia"
+  },
+  "dopaminIndex": {
+    "message": "Indeks Dopaminy",
+    "description": "Tytuł Indeksu Dopaminy"
+  },
+  "reportIssue": {
+    "message": "Zgłoś problem",
+    "description": "Link do zgłaszania problemów"
+  },
+  "modeCreate": {
+    "message": "Tworzenie & głęboka praca",
+    "description": "Tryb tworzenia"
+  },
+  "modeNetworking": {
+    "message": "Networking & znajomi",
+    "description": "Tryb networkingu"
+  },
+  "modeAnalytics": {
+    "message": "Analityka",
+    "description": "Tryb analityczny"
+  },
+  "modeInspiration": {
+    "message": "Inspiracja & wiadomości",
+    "description": "Tryb inspiracji"
+  },
+  "modePlay": {
+    "message": "Zabawa & gry",
+    "description": "Tryb zabawy"
+  },
+  "buttonDisable": {
+    "message": "Wyłącz",
+    "description": "Przycisk wyłączania"
+  },
+  "focusOn": {
+    "message": "Skup się na",
+    "description": "Tytuł trybu skupienia"
+  }
+}

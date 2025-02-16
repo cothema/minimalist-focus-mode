@@ -1,0 +1,46 @@
+{
+  "extensionName": {
+    "message": "Minimalistický režim soustředění – Zůstaňte soustředění, buďte produktivní",
+    "description": "Název rozšíření"
+  },
+  "extensionDescription": {
+    "message": "Rozšíření pro Chrome, které skrývá rušivé prvky a pomáhá uživatelům soustředit se.",
+    "description": "Popis rozšíření"
+  },
+  "dopaminIndex": {
+    "message": "Dopaminový index",
+    "description": "Název Dopaminového indexu"
+  },
+  "reportIssue": {
+    "message": "Nahlásit problém",
+    "description": "Odkaz na nahlášení problému"
+  },
+  "modeCreate": {
+    "message": "Tvorba & hluboká práce",
+    "description": "Režim tvorby"
+  },
+  "modeNetworking": {
+    "message": "Networking & přátelé",
+    "description": "Režim networkingu"
+  },
+  "modeAnalytics": {
+    "message": "Analytika",
+    "description": "Režim analytiky"
+  },
+  "modeInspiration": {
+    "message": "Inspirace & zprávy",
+    "description": "Režim inspirace"
+  },
+  "modePlay": {
+    "message": "Zábava & hry",
+    "description": "Režim hraní"
+  },
+  "buttonDisable": {
+    "message": "Deaktivovat",
+    "description": "Tlačítko deaktivace"
+  },
+  "focusOn": {
+    "message": "Soustředit se na",
+    "description": "Název režimu soustředění"
+  }
+}
