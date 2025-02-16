@@ -1,6 +1,6 @@
 {
   "name": "minimalist-focus-mode",
-  "version": "0.1",
+  "version": "0.2",
   "description": "A Chrome extension that hides distracting elements to help users stay focused.",
   "main": "src/background.js",
   "scripts": {
@@ -30,11 +30,18 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@tailwindcss/postcss": "^4.0.6"
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@tailwindcss/postcss": "^4.0.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.26.3",
     "@types/chrome": "^0.0.304",
+    "@types/react": "^19.0.9",
+    "@types/react-dom": "^19.0.3",
     "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",

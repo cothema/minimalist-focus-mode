@@ -5,54 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minimalist Focus Mode Extension | Settings</title>
   <link rel="stylesheet" href="../style.css">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      background: #222222;
-    }
-  </style>
 </head>
 <body>
-<div class="menu">
-  <div class="menu-item" id="about">About the Extension</div>
-  <a href="mailto:ceo+focusmode@cothema.com" target="_blank">
-    <div class="menu-item" id="report">Report Issue</div>
-  </a>
-</div>
-
-<div class="content">
-  <div class="content-text">
-    <p>
-      Minimalist Focus Mode is a Chrome extension designed to help users stay focused by hiding distracting elements.
-      This extension allows users to toggle focus mode, which hides specific elements.
-    </p>
-
-    <h2>Supported websites</h2>
-    <ul>
-      <li>LinkedIn</li>
-      <li>Facebook</li>
-      <li>YouTube</li>
-    </ul>
-  </div>
-
-  <footer>
-    <p>
-      The extension licensed under Apache License Version 2.0.<br/>
-      You can find the source code on <a href="https://github.com/cothema/minimalist-focus-mode/"
-                                         target="_blank">GitHub</a>.
-    </p>
-
-    Created by <a href="https://cothema.com/" target="_blank">Cothema s.r.o.</a>
-  </footer>
-</div>
-
-<script src="../popup/popup.js"></script>
+<div id="settings-root"></div>
+<script src="../settings.bundle.js"></script>
 </body>
 </html>

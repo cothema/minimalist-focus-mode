@@ -5,11 +5,11 @@
 html, body {
   margin: 0;
 }
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  width: 200px;
-  color: #ffffff;
+  height: 100%;
 }
 
 footer {
@@ -95,31 +95,6 @@ select {
   }
 }
 
-#modeButtons button {
-  text-align: left;
-}
-
-.mode-button {
-  background-color: white;
-  color: black;
-  margin-bottom: 10px;
-
-  &.enabled, &.enabled:hover {
-    background-color: #46af2e;
-    color: #ffffff;
-  }
-
-  &:hover {
-    background-color: #b1ff9f;
-  }
-
-  &[data-mode="disabled"] {
-    background-color: #aa0000;
-    color: white;
-    text-align: center !important;
-  }
-}
-
 .settings-icon {
   font-size: 24px;
   position: absolute;
@@ -153,4 +128,12 @@ select {
   color: #aaaaaa;
   margin-top: 5px;
   font-size: 2em;
+}
+
+#settings-root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: #222222;
+  color: #ffffff;
 }

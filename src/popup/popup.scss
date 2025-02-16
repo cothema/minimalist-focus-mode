@@ -1,0 +1,99 @@
+body {
+  width: 250px;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: left;
+  color: #aaaaaa;
+}
+
+button {
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#popup-root {
+  border-radius: 5px;
+  background: #222222;
+  padding: 20px;
+}
+
+#modeButtons button {
+  text-align: left;
+}
+
+.mode-button {
+  background-color: white;
+  color: black;
+  margin-bottom: 10px;
+
+  &.enabled, &.enabled:hover {
+    background-color: #46af2e;
+    color: #ffffff;
+  }
+
+  &:hover {
+    background-color: #b1ff9f;
+  }
+
+  &[data-mode="disabled"] {
+    background-color: #aa0000;
+    color: white;
+    text-align: center !important;
+  }
+}
+
+.mode-button {
+  background-color: white;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.report-issue {
+  margin-top: 15px;
+  font-size: 12px;
+
+  a {
+    color: #aaaaaa;
+  }
+}
+
+.settings-icon {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #aaaaaa;
+
+  &:hover {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+}
+
+#dopaminIndex {
+  margin-top: 20px;
+}
+
+#dopaminIndexTitle {
+  color: #aaaaaa;
+
+  .fas {
+    margin-left: 2px;
+  }
+}
+
+#dopaminIndexValue {
+  color: #aaaaaa;
+  margin-top: 5px;
+  font-size: 2em;
+}

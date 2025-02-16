@@ -6,20 +6,22 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: {
     background: './src/background.ts',
-    popup: './src/popup/popup.ts',
+    popup: './src/popup/popup.tsx',
+    settings: './src/settings/settings.tsx',
     linkedin: './src/modules/linkedin/mode.js',
     facebook: './src/modules/facebook/mode.js',
     youtube: './src/modules/youtube/homepage.js',
     news: './src/rulesets/news/news.ts',
     adult: './src/rulesets/adult/adult.ts',
-    style: './src/style.scss'
+    style: './src/style.scss',
+    stylePopup: './src/popup/popup.scss'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [
     new CleanWebpackPlugin({
@@ -29,7 +31,7 @@ module.exports = {
       patterns: [
         { from: 'manifest.json', to: '.' },
         { from: '**/*.html', to: '.', context: 'src' },
-        { from: 'assets', to: './assets'},
+        { from: 'assets', to: './assets' },
       ]
     }),
     new MiniCssExtractPlugin({
@@ -60,7 +62,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.ts$/,
+        test: /\.(ts|tsx)$/,
         use: 'ts-loader',
         exclude: /node_modules/
       }
