@@ -1,4 +1,10 @@
-export const MODES = ['create', 'analytics', 'play', 'inspiration', 'networking'] as const;
+export const MODES: string[] = [
+  'create',
+  'analytics',
+  'play',
+  'inspiration',
+  'networking',
+] as const;
 
 export type Mode = (typeof MODES)[number];
 

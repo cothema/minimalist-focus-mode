@@ -86,7 +86,7 @@ const Popup: React.FC = () => {
 
   return (
     <div>
-      <h2>{t('focusOn')}:</h2>
+      <h2 className={'text-lg'}>{t('focusOn')}:</h2>
       <a href="/settings/settings.html" target="_blank">
         <FontAwesomeIcon icon={faCog} className="settings-icon pointer" title="Settings" />
       </a>

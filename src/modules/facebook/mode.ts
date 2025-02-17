@@ -1,5 +1,8 @@
-import {hideElements, getSelectedMode} from '../../lib/utils';
-import {DEFAULT_SETTINGS_FILTERED_WEBSITES, SettingsFilteredWebsites} from "../../lib/filteredWebsites";
+import { hideElements, getSelectedMode } from '../../lib/utils';
+import {
+  DEFAULT_SETTINGS_FILTERED_WEBSITES,
+  SettingsFilteredWebsites,
+} from '../../lib/filteredWebsites';
 
 type Selectors = {
   [key: string]: string[];
@@ -43,6 +46,6 @@ chrome.storage.sync.get(['filteredWebsitesSettings'], (result: any) => {
         hideElements(modeMappings[mode] || []);
       });
       removeNotificationCount();
-    }).observe(document.body, {childList: true, subtree: true});
+    }).observe(document.body, { childList: true, subtree: true });
   }
 });

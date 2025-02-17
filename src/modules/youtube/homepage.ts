@@ -1,5 +1,5 @@
-import {hideElements, getSelectedMode} from '../../lib/utils';
-import {SettingsFilteredWebsites} from "../../lib/filteredWebsites";
+import { hideElements, getSelectedMode } from '../../lib/utils';
+import { SettingsFilteredWebsites } from '../../lib/filteredWebsites';
 
 type Selectors = {
   hp: {
@@ -35,6 +35,6 @@ chrome.storage.sync.get(['filteredWebsitesSettings'], (result: any) => {
       getSelectedMode((mode: keyof ModeMappings) => {
         hideElements(modeMappings[mode] || []);
       });
-    }).observe(document.body, {childList: true, subtree: true});
+    }).observe(document.body, { childList: true, subtree: true });
   }
 });

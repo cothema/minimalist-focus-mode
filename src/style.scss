@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@use "tailwindcss";
+
+@layer base {
+  h2 {
+    color: #aaaaaa;
+    @apply text-2xl font-bold mb-4 mt-6 text-left;
+  }
+}
 
 html,
 body {
@@ -17,14 +22,16 @@ footer {
   margin-top: 50px;
 }
 
-h2 {
-  margin-top: 0;
-  text-align: left;
-  color: #aaaaaa;
-}
-
 a {
   color: #ffffff;
+}
+
+label {
+  margin-right: 2rem;
+
+  input[type="checkbox"] {
+    margin-right: 1rem;
+  }
 }
 
 ul {

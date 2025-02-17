@@ -1,4 +1,10 @@
-export const FILTERED_WEBSITES = ['facebook', 'linkedin', 'youtube', 'news', 'adult'] as const;
+export const FILTERED_WEBSITES: string[] = [
+  'facebook',
+  'linkedin',
+  'youtube',
+  'news',
+  'adult',
+] as const;
 
 export type FilteredWebsite = (typeof FILTERED_WEBSITES)[number];
 

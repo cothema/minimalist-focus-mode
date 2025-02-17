@@ -1,5 +1,5 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -29,10 +29,10 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'manifest.json', to: '.' },
-        { from: '**/*.html', to: '.', context: 'src' },
-        { from: 'assets', to: './assets' },
-        { from: '_locales', to: './_locales' },
+        {from: 'manifest.json', to: '.'},
+        {from: '**/*.html', to: '.', context: 'src'},
+        {from: 'assets', to: './assets'},
+        {from: '_locales', to: './_locales'},
       ],
     }),
     new MiniCssExtractPlugin({
@@ -46,25 +46,33 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { esModule: false },
+            options: {esModule: false},
           },
           {
             loader: 'css-loader',
-            options: { sourceMap: true },
+            options: {sourceMap: true},
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true },
+            options: {sourceMap: true},
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true },
+            options: {sourceMap: true},
           },
         ],
       },
       {
         test: /\.(ts|tsx)$/,
-        use: 'ts-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
+            }
+          },
+          'ts-loader'
+        ],
         exclude: /node_modules/,
       },
     ],
