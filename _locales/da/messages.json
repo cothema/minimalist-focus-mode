@@ -1,0 +1,74 @@
+{
+  "extensionName": {
+    "message": "Minimalistisk fokus-tilstand – Forbliv fokuseret, vær produktiv",
+    "description": "Navnet på udvidelsen"
+  },
+  "extensionDescription": {
+    "message": "En Chrome-udvidelse, der skjuler distraherende elementer og hjælper brugere med at holde fokus.",
+    "description": "Beskrivelse af udvidelsen"
+  },
+  "dopaminIndex": {
+    "message": "Dopamin-indeks",
+    "description": "Titel på Dopamin-indekset"
+  },
+  "reportIssue": {
+    "message": "Rapportér problem",
+    "description": "Link til at rapportere et problem"
+  },
+  "modeCreate": {
+    "message": "Skabelse & dybt arbejde",
+    "description": "Skabelsestilstand"
+  },
+  "modeNetworking": {
+    "message": "Netværk & venner",
+    "description": "Netværkstilstand"
+  },
+  "modeAnalytics": {
+    "message": "Analyse",
+    "description": "Analysestand"
+  },
+  "modeInspiration": {
+    "message": "Inspiration & nyheder",
+    "description": "Inspirationstilstand"
+  },
+  "modePlay": {
+    "message": "Underholdning & spil",
+    "description": "Spiltilstand"
+  },
+  "buttonDisable": {
+    "message": "Deaktivér",
+    "description": "Deaktiveringsknap"
+  },
+  "focusOn": {
+    "message": "Fokus på",
+    "description": "Titel på fokustilstand"
+  },
+  "settingsAbout": {
+    "message": "Om udvidelsen",
+    "description": "Om-sektion på indstillingssiden"
+  },
+  "settingsDescription": {
+    "message": "Minimalistisk fokus-tilstand er en Chrome-udvidelse, der hjælper brugere med at forblive fokuserede ved at skjule distraherende elementer. Denne udvidelse gør det muligt at aktivere fokustilstand, som skjuler specifikke elementer.",
+    "description": "Beskrivelse på indstillingssiden"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Understøttede websteder",
+    "description": "Sektion for understøttede websteder på indstillingssiden"
+  },
+  "settingsEnabledModes": {
+    "message": "Aktiverede fokustilstande",
+    "description": "Sektion for aktiverede tilstande på indstillingssiden"
+  },
+  "settingsLicense": {
+    "message": "Denne udvidelse er licenseret under Apache License Version 2.0.",
+    "description": "Licensinformation på indstillingssiden"
+  },
+  "settingsSourceCode": {
+    "message": "Du kan finde kildekoden på",
+    "description": "Linktekst til kildekoden på indstillingssiden"
+  },
+  "settingsCreatedBy": {
+    "message": "Udviklet af",
+    "description": "Udviklerens navn på indstillingssiden"
+  }
+}

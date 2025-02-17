@@ -1,0 +1,74 @@
+{
+  "extensionName": {
+    "message": "Modo de Enfoque Minimalista – Mantente enfocado, sé productivo",
+    "description": "Nombre de la extensión"
+  },
+  "extensionDescription": {
+    "message": "Una extensión de Chrome que oculta elementos distractivos para ayudar a los usuarios a concentrarse.",
+    "description": "Descripción de la extensión"
+  },
+  "dopaminIndex": {
+    "message": "Índice de Dopamina",
+    "description": "Título del Índice de Dopamina"
+  },
+  "reportIssue": {
+    "message": "Informar un problema",
+    "description": "Enlace para informar un problema"
+  },
+  "modeCreate": {
+    "message": "Creación & trabajo profundo",
+    "description": "Modo de creación"
+  },
+  "modeNetworking": {
+    "message": "Networking & amigos",
+    "description": "Modo de networking"
+  },
+  "modeAnalytics": {
+    "message": "Analítica",
+    "description": "Modo de analítica"
+  },
+  "modeInspiration": {
+    "message": "Inspiración & noticias",
+    "description": "Modo de inspiración"
+  },
+  "modePlay": {
+    "message": "Diversión & juegos",
+    "description": "Modo de juegos"
+  },
+  "buttonDisable": {
+    "message": "Desactivar",
+    "description": "Botón de desactivación"
+  },
+  "focusOn": {
+    "message": "Enfocarse en",
+    "description": "Título del modo de enfoque"
+  },
+  "settingsAbout": {
+    "message": "Acerca de la extensión",
+    "description": "Sección sobre la extensión en la página de configuración"
+  },
+  "settingsDescription": {
+    "message": "El Modo de Enfoque Minimalista es una extensión de Chrome diseñada para ayudar a los usuarios a mantenerse enfocados ocultando elementos distractivos. Esta extensión permite activar el modo de enfoque, que oculta elementos específicos.",
+    "description": "Descripción en la página de configuración"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Sitios web compatibles",
+    "description": "Sección de sitios web compatibles en la página de configuración"
+  },
+  "settingsEnabledModes": {
+    "message": "Modos de enfoque activados",
+    "description": "Sección de modos activados en la página de configuración"
+  },
+  "settingsLicense": {
+    "message": "Esta extensión está licenciada bajo Apache License Version 2.0.",
+    "description": "Información de licencia en la página de configuración"
+  },
+  "settingsSourceCode": {
+    "message": "Puedes encontrar el código fuente en",
+    "description": "Texto del enlace al código fuente en la página de configuración"
+  },
+  "settingsCreatedBy": {
+    "message": "Creado por",
+    "description": "Crédito del creador en la página de configuración"
+  }
+}

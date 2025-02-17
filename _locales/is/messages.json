@@ -1,0 +1,74 @@
+{
+  "extensionName": {
+    "message": "Lágmarks einbeitingarhamur – Vertu einbeittur, vertu afkastamikill",
+    "description": "Nafn viðbótarinnar"
+  },
+  "extensionDescription": {
+    "message": "Chrome viðbót sem felur truflandi þætti og hjálpar notendum að halda einbeitingu.",
+    "description": "Lýsing viðbótarinnar"
+  },
+  "dopaminIndex": {
+    "message": "Dópamínvísitala",
+    "description": "Titill dópamínvísitölu"
+  },
+  "reportIssue": {
+    "message": "Tilkynna vandamál",
+    "description": "Hlekkur til að tilkynna vandamál"
+  },
+  "modeCreate": {
+    "message": "Sköpun & djúpvinna",
+    "description": "Sköpunarhamur"
+  },
+  "modeNetworking": {
+    "message": "Tengslamyndun & vinir",
+    "description": "Tengslamyndunarhamur"
+  },
+  "modeAnalytics": {
+    "message": "Greiningar",
+    "description": "Greiningarhamur"
+  },
+  "modeInspiration": {
+    "message": "Innsæi & fréttir",
+    "description": "Innsæishamur"
+  },
+  "modePlay": {
+    "message": "Skemmtun & leikir",
+    "description": "Skemmtunarhamur"
+  },
+  "buttonDisable": {
+    "message": "Slökkva",
+    "description": "Slökkvatakki"
+  },
+  "focusOn": {
+    "message": "Einbeita sér að",
+    "description": "Titill einbeitingarhamar"
+  },
+  "settingsAbout": {
+    "message": "Um viðbótina",
+    "description": "Umfjöllun á stillingasíðu"
+  },
+  "settingsDescription": {
+    "message": "Lágmarks einbeitingarhamur er Chrome viðbót sem hjálpar notendum að halda einbeitingu með því að fela truflandi þætti. Þessi viðbót gerir notendum kleift að kveikja á einbeitingarham sem felur tiltekna þætti.",
+    "description": "Lýsing á stillingasíðu"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Studdar vefsíður",
+    "description": "Listi yfir studdar vefsíður á stillingasíðu"
+  },
+  "settingsEnabledModes": {
+    "message": "Virkir einbeitingarhamir",
+    "description": "Listi yfir virka hamir á stillingasíðu"
+  },
+  "settingsLicense": {
+    "message": "Þessi viðbót er gefin út undir Apache License Version 2.0.",
+    "description": "Upplýsingar um leyfi á stillingasíðu"
+  },
+  "settingsSourceCode": {
+    "message": "Þú getur fundið upprunakóðann á",
+    "description": "Texti tengils á upprunakóða á stillingasíðu"
+  },
+  "settingsCreatedBy": {
+    "message": "Búið til af",
+    "description": "Höfundur viðbótarinnar á stillingasíðu"
+  }
+}

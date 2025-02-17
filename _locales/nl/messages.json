@@ -1,0 +1,74 @@
+{
+  "extensionName": {
+    "message": "Minimalistische Focusmodus – Blijf gefocust, blijf productief",
+    "description": "Naam van de extensie"
+  },
+  "extensionDescription": {
+    "message": "Een Chrome-extensie die afleidende elementen verbergt om gebruikers te helpen zich te concentreren.",
+    "description": "Beschrijving van de extensie"
+  },
+  "dopaminIndex": {
+    "message": "Dopamine-Index",
+    "description": "Titel van de Dopamine-Index"
+  },
+  "reportIssue": {
+    "message": "Probleem melden",
+    "description": "Link om een probleem te melden"
+  },
+  "modeCreate": {
+    "message": "Creatie & diep werk",
+    "description": "Creatiemodus"
+  },
+  "modeNetworking": {
+    "message": "Netwerken & vrienden",
+    "description": "Netwerkmodus"
+  },
+  "modeAnalytics": {
+    "message": "Analyse",
+    "description": "Analysemode"
+  },
+  "modeInspiration": {
+    "message": "Inspiratie & nieuws",
+    "description": "Inspiratiemodus"
+  },
+  "modePlay": {
+    "message": "Plezier & games",
+    "description": "Speelmodus"
+  },
+  "buttonDisable": {
+    "message": "Uitschakelen",
+    "description": "Uitschakelknop"
+  },
+  "focusOn": {
+    "message": "Focus op",
+    "description": "Titel van de focusmodus"
+  },
+  "settingsAbout": {
+    "message": "Over de extensie",
+    "description": "Instellingenpagina - Over sectie"
+  },
+  "settingsDescription": {
+    "message": "Minimalistische Focusmodus is een Chrome-extensie die gebruikers helpt gefocust te blijven door afleidende elementen te verbergen. Deze extensie stelt gebruikers in staat om de focusmodus in te schakelen, die specifieke elementen verbergt.",
+    "description": "Beschrijving op de instellingenpagina"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Ondersteunde websites",
+    "description": "Sectie ondersteunde websites op de instellingenpagina"
+  },
+  "settingsEnabledModes": {
+    "message": "Ingeschakelde focusmodi",
+    "description": "Sectie ingeschakelde modi op de instellingenpagina"
+  },
+  "settingsLicense": {
+    "message": "Deze extensie is gelicentieerd onder de Apache License Version 2.0.",
+    "description": "Licentie-informatie op de instellingenpagina"
+  },
+  "settingsSourceCode": {
+    "message": "Je kunt de broncode vinden op",
+    "description": "Tekst van de link naar de broncode op de instellingenpagina"
+  },
+  "settingsCreatedBy": {
+    "message": "Gemaakt door",
+    "description": "Maker krediet op de instellingenpagina"
+  }
+}

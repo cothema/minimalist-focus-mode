@@ -42,5 +42,33 @@
   "focusOn": {
     "message": "Focus on",
     "description": "Focus on mode (title)"
+  },
+  "settingsAbout": {
+    "message": "About the Extension",
+    "description": "Settings page about section"
+  },
+  "settingsDescription": {
+    "message": "Minimalist Focus Mode is a Chrome extension designed to help users stay focused by hiding distracting elements. This extension allows users to toggle focus mode, which hides specific elements.",
+    "description": "Settings page description"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Supported Websites",
+    "description": "Settings page supported websites section"
+  },
+  "settingsEnabledModes": {
+    "message": "Enabled Focus Modes",
+    "description": "Settings page enabled modes section"
+  },
+  "settingsLicense": {
+    "message": "The extension is licensed under Apache License Version 2.0.",
+    "description": "Settings page license information"
+  },
+  "settingsSourceCode": {
+    "message": "You can find the source code on",
+    "description": "Settings page source code link text"
+  },
+  "settingsCreatedBy": {
+    "message": "Created by",
+    "description": "Settings page creator credit"
   }
 }

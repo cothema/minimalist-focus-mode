@@ -1,0 +1,74 @@
+{
+  "extensionName": {
+    "message": "Minimalistinen keskittymistila – Pysy keskittyneenä, ole tuottava",
+    "description": "Laajennuksen nimi"
+  },
+  "extensionDescription": {
+    "message": "Chrome-laajennus, joka piilottaa häiritsevät elementit ja auttaa käyttäjiä keskittymään.",
+    "description": "Laajennuksen kuvaus"
+  },
+  "dopaminIndex": {
+    "message": "Dopamiini-indeksi",
+    "description": "Dopamiini-indeksin nimi"
+  },
+  "reportIssue": {
+    "message": "Ilmoita ongelmasta",
+    "description": "Linkki ongelman ilmoittamiseen"
+  },
+  "modeCreate": {
+    "message": "Luominen & syvätyö",
+    "description": "Luomistila"
+  },
+  "modeNetworking": {
+    "message": "Verkostoituminen & ystävät",
+    "description": "Verkostoitumistila"
+  },
+  "modeAnalytics": {
+    "message": "Analytiikka",
+    "description": "Analytiikkatila"
+  },
+  "modeInspiration": {
+    "message": "Inspiraatio & uutiset",
+    "description": "Inspiraatiotila"
+  },
+  "modePlay": {
+    "message": "Viihde & pelit",
+    "description": "Pelimoodi"
+  },
+  "buttonDisable": {
+    "message": "Poista käytöstä",
+    "description": "Poista käytöstä -painike"
+  },
+  "focusOn": {
+    "message": "Keskittyminen kohteeseen",
+    "description": "Keskittymistilan otsikko"
+  },
+  "settingsAbout": {
+    "message": "Tietoa laajennuksesta",
+    "description": "Tietoa-osio asetussivulla"
+  },
+  "settingsDescription": {
+    "message": "Minimalistinen keskittymistila on Chrome-laajennus, joka auttaa käyttäjiä pysymään keskittyneinä piilottamalla häiritsevät elementit. Tämä laajennus mahdollistaa keskittymistilan aktivoinnin, joka piilottaa tietyt elementit.",
+    "description": "Kuvaus asetussivulla"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Tuetut verkkosivustot",
+    "description": "Asetussivun tuettujen verkkosivujen osio"
+  },
+  "settingsEnabledModes": {
+    "message": "Aktiiviset keskittymistilat",
+    "description": "Asetussivun aktiivisten tilojen osio"
+  },
+  "settingsLicense": {
+    "message": "Tämä laajennus on lisensoitu Apache License Version 2.0 -lisenssillä.",
+    "description": "Lisenssitiedot asetussivulla"
+  },
+  "settingsSourceCode": {
+    "message": "Löydät lähdekoodin osoitteesta",
+    "description": "Lähdekoodilinkin teksti asetussivulla"
+  },
+  "settingsCreatedBy": {
+    "message": "Luonut",
+    "description": "Luojan nimi asetussivulla"
+  }
+}

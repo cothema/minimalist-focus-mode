@@ -42,5 +42,33 @@
   "focusOn": {
     "message": "Skup się na",
     "description": "Tytuł trybu skupienia"
+  },
+  "settingsAbout": {
+    "message": "O rozszerzeniu",
+    "description": "Sekcja 'O rozszerzeniu' na stronie ustawień"
+  },
+  "settingsDescription": {
+    "message": "Minimalistyczny Tryb Skupienia to rozszerzenie do Chrome, które pomaga użytkownikom skoncentrować się, ukrywając rozpraszające elementy. To rozszerzenie umożliwia włączenie trybu skupienia, który ukrywa określone elementy.",
+    "description": "Opis na stronie ustawień"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Obsługiwane strony internetowe",
+    "description": "Sekcja obsługiwanych stron na stronie ustawień"
+  },
+  "settingsEnabledModes": {
+    "message": "Włączone tryby skupienia",
+    "description": "Sekcja włączonych trybów na stronie ustawień"
+  },
+  "settingsLicense": {
+    "message": "To rozszerzenie jest licencjonowane na podstawie licencji Apache License Version 2.0.",
+    "description": "Informacja o licencji na stronie ustawień"
+  },
+  "settingsSourceCode": {
+    "message": "Kod źródłowy dostępny na",
+    "description": "Tekst linku do kodu źródłowego na stronie ustawień"
+  },
+  "settingsCreatedBy": {
+    "message": "Stworzone przez",
+    "description": "Informacja o twórcy na stronie ustawień"
   }
 }

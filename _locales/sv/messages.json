@@ -1,0 +1,74 @@
+{
+  "extensionName": {
+    "message": "Minimalistiskt fokusläge – Håll dig fokuserad, var produktiv",
+    "description": "Namn på tillägget"
+  },
+  "extensionDescription": {
+    "message": "Ett Chrome-tillägg som döljer distraherande element och hjälper användare att hålla fokus.",
+    "description": "Beskrivning av tillägget"
+  },
+  "dopaminIndex": {
+    "message": "Dopaminindex",
+    "description": "Titel på Dopaminindex"
+  },
+  "reportIssue": {
+    "message": "Rapportera problem",
+    "description": "Länk för att rapportera problem"
+  },
+  "modeCreate": {
+    "message": "Skapande & djuparbete",
+    "description": "Skapandeläge"
+  },
+  "modeNetworking": {
+    "message": "Nätverkande & vänner",
+    "description": "Nätverksläge"
+  },
+  "modeAnalytics": {
+    "message": "Analys",
+    "description": "Analysläge"
+  },
+  "modeInspiration": {
+    "message": "Inspiration & nyheter",
+    "description": "Inspirationsläge"
+  },
+  "modePlay": {
+    "message": "Underhållning & spel",
+    "description": "Spelläge"
+  },
+  "buttonDisable": {
+    "message": "Inaktivera",
+    "description": "Inaktiveringsknapp"
+  },
+  "focusOn": {
+    "message": "Fokusera på",
+    "description": "Titel på fokusläget"
+  },
+  "settingsAbout": {
+    "message": "Om tillägget",
+    "description": "Om-sektionen på inställningssidan"
+  },
+  "settingsDescription": {
+    "message": "Minimalistiskt fokusläge är ett Chrome-tillägg som hjälper användare att hålla sig fokuserade genom att dölja distraherande element. Detta tillägg gör det möjligt att aktivera ett fokusläge som döljer specifika element.",
+    "description": "Beskrivning på inställningssidan"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Stödda webbplatser",
+    "description": "Sektion för stödda webbplatser på inställningssidan"
+  },
+  "settingsEnabledModes": {
+    "message": "Aktiverade fokuslägen",
+    "description": "Sektion för aktiverade lägen på inställningssidan"
+  },
+  "settingsLicense": {
+    "message": "Detta tillägg är licensierat under Apache License Version 2.0.",
+    "description": "Licensinformation på inställningssidan"
+  },
+  "settingsSourceCode": {
+    "message": "Du kan hitta källkoden på",
+    "description": "Länktext för källkoden på inställningssidan"
+  },
+  "settingsCreatedBy": {
+    "message": "Skapad av",
+    "description": "Kreatörens namn på inställningssidan"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "extensionName": {
+    "message": "Minimalistisk fokusmodus – Hold deg fokusert, vær produktiv",
+    "description": "Navn på utvidelsen"
+  },
+  "extensionDescription": {
+    "message": "En Chrome-utvidelse som skjuler distraherende elementer og hjelper brukere med å holde fokus.",
+    "description": "Beskrivelse av utvidelsen"
+  },
+  "dopaminIndex": {
+    "message": "Dopaminindeks",
+    "description": "Tittel på Dopaminindeksen"
+  },
+  "reportIssue": {
+    "message": "Rapporter problem",
+    "description": "Lenke for å rapportere et problem"
+  },
+  "modeCreate": {
+    "message": "Skaping & dypt arbeid",
+    "description": "Skapermodus"
+  },
+  "modeNetworking": {
+    "message": "Nettverking & venner",
+    "description": "Nettverksmodus"
+  },
+  "modeAnalytics": {
+    "message": "Analyse",
+    "description": "Analysemodus"
+  },
+  "modeInspiration": {
+    "message": "Inspirasjon & nyheter",
+    "description": "Inspirasjonsmodus"
+  },
+  "modePlay": {
+    "message": "Underholdning & spill",
+    "description": "Spillmodus"
+  },
+  "buttonDisable": {
+    "message": "Deaktiver",
+    "description": "Deaktiveringsknapp"
+  },
+  "focusOn": {
+    "message": "Fokus på",
+    "description": "Tittel for fokusmodus"
+  },
+  "settingsAbout": {
+    "message": "Om utvidelsen",
+    "description": "Om-seksjon på innstillingssiden"
+  },
+  "settingsDescription": {
+    "message": "Minimalistisk fokusmodus er en Chrome-utvidelse som hjelper brukere med å holde seg fokusert ved å skjule distraherende elementer. Denne utvidelsen lar deg aktivere fokusmodus, som skjuler spesifikke elementer.",
+    "description": "Beskrivelse på innstillingssiden"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Støttede nettsteder",
+    "description": "Seksjon for støttede nettsteder på innstillingssiden"
+  },
+  "settingsEnabledModes": {
+    "message": "Aktiverte fokusmoduser",
+    "description": "Seksjon for aktiverte moduser på innstillingssiden"
+  },
+  "settingsLicense": {
+    "message": "Denne utvidelsen er lisensiert under Apache License Version 2.0.",
+    "description": "Lisensinformasjon på innstillingssiden"
+  },
+  "settingsSourceCode": {
+    "message": "Du kan finne kildekoden på",
+    "description": "Lenketekst for kildekoden på innstillingssiden"
+  },
+  "settingsCreatedBy": {
+    "message": "Laget av",
+    "description": "Skaperens navn på innstillingssiden"
+  }
+}

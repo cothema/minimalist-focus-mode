@@ -42,5 +42,33 @@
   "focusOn": {
     "message": "Soustředit se na",
     "description": "Název režimu soustředění"
+  },
+  "settingsAbout": {
+    "message": "O rozšíření",
+    "description": "Sekce O aplikaci na stránce nastavení"
+  },
+  "settingsDescription": {
+    "message": "Minimalistický režim soustředění je rozšíření pro Chrome navržené tak, aby pomohlo uživatelům udržet soustředění skrytím rušivých prvků. Toto rozšíření umožňuje uživatelům přepínat režim soustředění, který skryje konkrétní prvky.",
+    "description": "Popis na stránce nastavení"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Podporované webové stránky",
+    "description": "Sekce podporovaných webů na stránce nastavení"
+  },
+  "settingsEnabledModes": {
+    "message": "Povolené režimy soustředění",
+    "description": "Sekce povolených režimů na stránce nastavení"
+  },
+  "settingsLicense": {
+    "message": "Toto rozšíření je open-source a je licencováno pod Apache License Version 2.0.",
+    "description": "Informace o licenci na stránce nastavení"
+  },
+  "settingsSourceCode": {
+    "message": "Zdrojový kód je veřejně dostupný na na",
+    "description": "Text odkazu na zdrojový kód"
+  },
+  "settingsCreatedBy": {
+    "message": "Vytvořila společnost",
+    "description": "Text o tvůrci na stránce nastavení"
   }
 }

@@ -1,0 +1,74 @@
+{
+  "extensionName": {
+    "message": "Mode de concentration minimaliste – Restez concentré, soyez productif",
+    "description": "Nom de l'extension"
+  },
+  "extensionDescription": {
+    "message": "Une extension Chrome qui masque les éléments distrayants pour aider les utilisateurs à rester concentrés.",
+    "description": "Description de l'extension"
+  },
+  "dopaminIndex": {
+    "message": "Indice de dopamine",
+    "description": "Titre de l'Indice de dopamine"
+  },
+  "reportIssue": {
+    "message": "Signaler un problème",
+    "description": "Lien pour signaler un problème"
+  },
+  "modeCreate": {
+    "message": "Création & travail en profondeur",
+    "description": "Mode de création"
+  },
+  "modeNetworking": {
+    "message": "Réseautage & amis",
+    "description": "Mode de réseautage"
+  },
+  "modeAnalytics": {
+    "message": "Analytique",
+    "description": "Mode analytique"
+  },
+  "modeInspiration": {
+    "message": "Inspiration & actualités",
+    "description": "Mode inspiration"
+  },
+  "modePlay": {
+    "message": "Divertissement & jeux",
+    "description": "Mode jeu"
+  },
+  "buttonDisable": {
+    "message": "Désactiver",
+    "description": "Bouton de désactivation"
+  },
+  "focusOn": {
+    "message": "Se concentrer sur",
+    "description": "Titre du mode de concentration"
+  },
+  "settingsAbout": {
+    "message": "À propos de l'extension",
+    "description": "Section À propos sur la page des paramètres"
+  },
+  "settingsDescription": {
+    "message": "Le Mode de concentration minimaliste est une extension Chrome conçue pour aider les utilisateurs à rester concentrés en masquant les éléments distrayants. Cette extension permet d'activer un mode de concentration qui masque certains éléments spécifiques.",
+    "description": "Description sur la page des paramètres"
+  },
+  "settingsSupportedWebsites": {
+    "message": "Sites Web pris en charge",
+    "description": "Section des sites pris en charge sur la page des paramètres"
+  },
+  "settingsEnabledModes": {
+    "message": "Modes de concentration activés",
+    "description": "Section des modes activés sur la page des paramètres"
+  },
+  "settingsLicense": {
+    "message": "Cette extension est sous licence Apache License Version 2.0.",
+    "description": "Informations sur la licence sur la page des paramètres"
+  },
+  "settingsSourceCode": {
+    "message": "Vous pouvez trouver le code source sur",
+    "description": "Texte du lien vers le code source sur la page des paramètres"
+  },
+  "settingsCreatedBy": {
+    "message": "Créé par",
+    "description": "Crédit du créateur sur la page des paramètres"
+  }
+}
