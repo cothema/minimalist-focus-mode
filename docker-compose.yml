@@ -1,0 +1,10 @@
+services:
+  app:
+    container_name: minimalist-focus-mode
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development

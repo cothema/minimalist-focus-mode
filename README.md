@@ -33,7 +33,7 @@ extension allows users to toggle focus mode, which hides specific elements.
 
 ## Development
 
-### 1. Installation
+### 1./A Installation (without Docker)
 
 - Ensure you have **Node.js (>=20.x)** and **npm** installed.
 - Run the following command to install project dependencies:
@@ -51,6 +51,22 @@ extension allows users to toggle focus mode, which hides specific elements.
 If everything works correctly, you should see a `dist/` folder created and build
 files in it and zipped build in `output` folder.
 
+### 1./B Installation (via Docker)
+
+You can also run this project inside a Docker container for consistent development environment.
+
+```sh
+    docker compose up -d
+```
+
+Project is continuously built via `npm run watch` inside the container and files are synced with the host machine.
+
+You can use Docker Desktop to access the container terminal or use the following command:
+
+```sh
+    docker exec -it minimalist-focus-mode /bin/bash
+```
+
 ### 2. Browser Setup for Development
 
 1. Open Chrome browser and navigate to `chrome://extensions/`.
@@ -67,8 +83,11 @@ To watch files and rebuild automatically without starting a server:
     npm run watch
 ```
 
+If using Docker, this is already running inside the container.
+
 In most cases, you will not need to reload the extension in browser manually.
-If necessary (e.g. `manifest.json` changes), you can reload the extension in `chrome://extensions/` by clicking on the reload icon in the extension
+If necessary (e.g. `manifest.json` changes), you can reload the extension in `chrome://extensions/` by clicking on the
+reload icon in the extension
 tile.
 
 ### 4. Building for Production
