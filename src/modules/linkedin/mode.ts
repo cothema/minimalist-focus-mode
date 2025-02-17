@@ -1,4 +1,5 @@
-import { hideElements, getSelectedMode } from '../../lib/utils';
+import {hideElements, getSelectedMode} from '../../lib/utils';
+import {SettingsFilteredWebsites} from "../../lib/filteredWebsites";
 
 type Selectors = {
   [key: string]: string[];
@@ -83,15 +84,20 @@ const removeNotificationCount = () => {
   document.title = document.title.replace(/^\(\d+\)\s*/, '');
 };
 
-removeNotificationCount();
+chrome.storage.sync.get(['filteredWebsitesSettings'], (result: any) => {
+  const data = result.filteredWebsitesSettings as SettingsFilteredWebsites | undefined;
+  if (data?.linkedin) {
+    removeNotificationCount();
 
-getSelectedMode((mode: keyof ModeMappings) => {
-  hideElements(modeMappings[mode] || []);
+    getSelectedMode((mode: keyof ModeMappings) => {
+      hideElements(modeMappings[mode] || []);
+    });
+
+    new MutationObserver(() => {
+      getSelectedMode((mode: keyof ModeMappings) => {
+        hideElements(modeMappings[mode] || []);
+      });
+      removeNotificationCount();
+    }).observe(document.body, {childList: true, subtree: true});
+  }
 });
-
-new MutationObserver(() => {
-  getSelectedMode((mode: keyof ModeMappings) => {
-    hideElements(modeMappings[mode] || []);
-  });
-  removeNotificationCount();
-}).observe(document.body, { childList: true, subtree: true });

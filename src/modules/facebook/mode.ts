@@ -1,4 +1,5 @@
-import { hideElements, getSelectedMode } from '../../lib/utils';
+import {hideElements, getSelectedMode} from '../../lib/utils';
+import {DEFAULT_SETTINGS_FILTERED_WEBSITES, SettingsFilteredWebsites} from "../../lib/filteredWebsites";
 
 type Selectors = {
   [key: string]: string[];
@@ -11,7 +12,10 @@ type ModeMappings = {
 const selectors: Selectors = {
   stories: ["[aria-label='stories tray']"],
   footer: ['footer'],
-  notifications: ['div[aria-expanded="false"][aria-label*="Notifications"][role="button"]','div[aria-hidden="true"][aria-label*="Notifications"][role="button"]'],
+  notifications: [
+    'div[aria-expanded="false"][aria-label*="Notifications"][role="button"]',
+    'div[aria-hidden="true"][aria-label*="Notifications"][role="button"]',
+  ],
 };
 
 const modeMappings: ModeMappings = {
@@ -25,15 +29,20 @@ const removeNotificationCount = () => {
   document.title = document.title.replace(/^\(\d+\)\s*/, '');
 };
 
-removeNotificationCount();
+chrome.storage.sync.get(['filteredWebsitesSettings'], (result: any) => {
+  const data = result.filteredWebsitesSettings as SettingsFilteredWebsites | undefined;
+  if (data?.facebook) {
+    removeNotificationCount();
 
-getSelectedMode((mode: keyof ModeMappings) => {
-  hideElements(modeMappings[mode] || []);
+    getSelectedMode((mode: keyof ModeMappings) => {
+      hideElements(modeMappings[mode] || []);
+    });
+
+    new MutationObserver(() => {
+      getSelectedMode((mode: keyof ModeMappings) => {
+        hideElements(modeMappings[mode] || []);
+      });
+      removeNotificationCount();
+    }).observe(document.body, {childList: true, subtree: true});
+  }
 });
-
-new MutationObserver(() => {
-  getSelectedMode((mode: keyof ModeMappings) => {
-    hideElements(modeMappings[mode] || []);
-  });
-  removeNotificationCount();
-}).observe(document.body, { childList: true, subtree: true });

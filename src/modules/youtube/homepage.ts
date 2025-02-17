@@ -1,4 +1,5 @@
-import { hideElements, getSelectedMode } from '../../lib/utils';
+import {hideElements, getSelectedMode} from '../../lib/utils';
+import {SettingsFilteredWebsites} from "../../lib/filteredWebsites";
 
 type Selectors = {
   hp: {
@@ -23,12 +24,17 @@ const modeMappings: ModeMappings = {
   play: [selectors.hp.contents],
 };
 
-getSelectedMode((mode: keyof ModeMappings) => {
-  hideElements(modeMappings[mode] || []);
-});
+chrome.storage.sync.get(['filteredWebsitesSettings'], (result: any) => {
+  const data = result.filteredWebsitesSettings as SettingsFilteredWebsites | undefined;
+  if (data?.youtube) {
+    getSelectedMode((mode: keyof ModeMappings) => {
+      hideElements(modeMappings[mode] || []);
+    });
 
-new MutationObserver(() => {
-  getSelectedMode((mode: keyof ModeMappings) => {
-    hideElements(modeMappings[mode] || []);
-  });
-}).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(() => {
+      getSelectedMode((mode: keyof ModeMappings) => {
+        hideElements(modeMappings[mode] || []);
+      });
+    }).observe(document.body, {childList: true, subtree: true});
+  }
+});
