@@ -1,4 +1,3 @@
-/// <reference types="chrome" />
 import { hideElements, getSelectedMode } from '../../lib/utils';
 
 type Selectors = {

@@ -7,8 +7,8 @@
     "watch": "webpack --watch --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "ai": "webpack --config webpack.ai.js",
-    "lint": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "lint": "eslint src --max-warnings=0",
+    "lint:fix": "eslint src --fix"
   },
   "repository": {
     "type": "git",
@@ -42,11 +42,17 @@
     "@types/chrome": "^0.0.304",
     "@types/react": "^19.0.9",
     "@types/react-dom": "^19.0.3",
+    "@types/web": "^0.0.203",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.2.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "mini-css-extract-plugin": "^2.9.2",
     "postcss": "^8.5.2",
     "postcss-loader": "^8.1.1",

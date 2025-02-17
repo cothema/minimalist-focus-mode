@@ -9,7 +9,9 @@
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "strict": true,
+    "types": ["chrome"],
+    "lib": ["dom", "esnext"]
   },
   "include": ["src", "global.d.ts"]
 }

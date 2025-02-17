@@ -1,5 +1,3 @@
-/// <reference types="chrome" />
-
 export function hideElements(selectorList: string[][]): void {
   selectorList.forEach((selectors) => {
     document.querySelectorAll(selectors.join(', ')).forEach((element) => {

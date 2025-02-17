@@ -1,5 +1,3 @@
-/// <reference types="chrome" />
-
 function blockAdultPages() {
   chrome.storage.sync.get(['selectedMode'], (data: any) => {
     const selectedMode = data.selectedMode;
