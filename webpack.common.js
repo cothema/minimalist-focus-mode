@@ -14,18 +14,18 @@ module.exports = {
     news: './src/rulesets/news/news.ts',
     adult: './src/rulesets/adult/adult.ts',
     style: './src/style.scss',
-    stylePopup: './src/popup/popup.scss'
+    stylePopup: './src/popup/popup.scss',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, "dist")]
+      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, 'dist')],
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -33,11 +33,11 @@ module.exports = {
         { from: '**/*.html', to: '.', context: 'src' },
         { from: 'assets', to: './assets' },
         { from: '_locales', to: './_locales' },
-      ]
+      ],
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
-    })
+      filename: '[name].css',
+    }),
   ],
   module: {
     rules: [
@@ -46,28 +46,28 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { esModule: false }
+            options: { esModule: false },
           },
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true },
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true }
-          }
-        ]
+            options: { sourceMap: true },
+          },
+        ],
       },
       {
         test: /\.(ts|tsx)$/,
         use: 'ts-loader',
-        exclude: /node_modules/
-      }
-    ]
+        exclude: /node_modules/,
+      },
+    ],
   },
-  mode: 'production'
+  mode: 'production',
 };

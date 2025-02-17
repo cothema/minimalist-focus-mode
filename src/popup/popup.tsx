@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { createRoot } from "react-dom/client";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import {t} from "../lib/i18n";
+import React, { useEffect, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
+import { t } from '../lib/i18n';
 
 declare const chrome: any;
 
-type Mode = "create" | "networking" | "analytics" | "inspiration" | "play" | "disabled";
+type Mode = 'create' | 'networking' | 'analytics' | 'inspiration' | 'play' | 'disabled';
 
 const MODES: { mode: Mode; emoji?: string; label: string }[] = [
-  { mode: "create", emoji: "🎨", label: t('modeCreate') },
-  { mode: "networking", emoji: "🤝", label: t('modeNetworking') },
-  { mode: "analytics", emoji: "📊", label: t('modeAnalytics') },
-  { mode: "inspiration", emoji: "💡", label: t('modeInspiration') },
-  { mode: "play", emoji: "🎮", label: t('modePlay') },
-  { mode: "disabled", label: t('buttonDisable') },
+  { mode: 'create', emoji: '🎨', label: t('modeCreate') },
+  { mode: 'networking', emoji: '🤝', label: t('modeNetworking') },
+  { mode: 'analytics', emoji: '📊', label: t('modeAnalytics') },
+  { mode: 'inspiration', emoji: '💡', label: t('modeInspiration') },
+  { mode: 'play', emoji: '🎮', label: t('modePlay') },
+  { mode: 'disabled', label: t('buttonDisable') },
 ];
 
 const DOPAMIN_INDEX: Record<Mode, number> = {
@@ -27,7 +27,7 @@ const DOPAMIN_INDEX: Record<Mode, number> = {
 };
 
 const Popup: React.FC = () => {
-  const [selectedMode, setSelectedMode] = useState<Mode>("disabled");
+  const [selectedMode, setSelectedMode] = useState<Mode>('disabled');
   const [availableModes, setAvailableModes] = useState<Record<Mode, boolean>>({
     create: true,
     networking: false,
@@ -38,16 +38,19 @@ const Popup: React.FC = () => {
   });
 
   useEffect(() => {
-    chrome.storage.sync.get(["selectedMode", "modeSettings"], (data: { selectedMode?: Mode; modeSettings?: Record<Mode, boolean> }) => {
-      const mode = data.selectedMode || "disabled";
-      setSelectedMode(mode);
-      if (data.modeSettings) {
-        setAvailableModes({ ...data.modeSettings, disabled: true });
+    chrome.storage.sync.get(
+      ['selectedMode', 'modeSettings'],
+      (data: { selectedMode?: Mode; modeSettings?: Record<Mode, boolean> }) => {
+        const mode = data.selectedMode || 'disabled';
+        setSelectedMode(mode);
+        if (data.modeSettings) {
+          setAvailableModes({ ...data.modeSettings, disabled: true });
+        }
+        updateDopaminIndex(mode);
+        highlightSelectedMode(mode);
+        updateExtensionIcon(mode);
       }
-      updateDopaminIndex(mode);
-      highlightSelectedMode(mode);
-      updateExtensionIcon(mode);
-    });
+    );
   }, []);
 
   const handleModeChange = (mode: Mode) => {
@@ -57,14 +60,14 @@ const Popup: React.FC = () => {
       updateDopaminIndex(mode);
       highlightSelectedMode(mode);
       updateExtensionIcon(mode);
-      chrome.runtime.sendMessage({ action: "reloadPage" });
+      chrome.runtime.sendMessage({ action: 'reloadPage' });
       window.close();
     });
   };
 
   const updateDopaminIndex = (mode: Mode) => {
     const index = DOPAMIN_INDEX[mode];
-    const dopaminIndexElement = document.getElementById("dopaminIndexValue");
+    const dopaminIndexElement = document.getElementById('dopaminIndexValue');
     if (dopaminIndexElement) {
       dopaminIndexElement.textContent = `${index}%`;
       dopaminIndexElement.style.color = `rgb(${255 - index * 2.55}, ${index * 2.55}, 0)`;
@@ -72,8 +75,8 @@ const Popup: React.FC = () => {
   };
 
   const highlightSelectedMode = (mode: Mode) => {
-    document.querySelectorAll("button[data-mode]").forEach((button) => {
-      button.classList.toggle("enabled", button.getAttribute("data-mode") === mode);
+    document.querySelectorAll('button[data-mode]').forEach((button) => {
+      button.classList.toggle('enabled', button.getAttribute('data-mode') === mode);
     });
   };
 
@@ -92,7 +95,7 @@ const Popup: React.FC = () => {
           <button
             key={mode}
             data-mode={mode}
-            className={`mode-button ${selectedMode === mode ? "enabled" : ""}`}
+            className={`mode-button ${selectedMode === mode ? 'enabled' : ''}`}
             onClick={() => handleModeChange(mode)}
             disabled={selectedMode === mode}
           >
@@ -102,20 +105,27 @@ const Popup: React.FC = () => {
       </div>
       <div id="dopaminIndex" className="dopamin-index">
         <div id="dopaminIndexTitle">
-          {t('dopaminIndex')} <a href="/settings/settings.html" target="_blank">
-            <FontAwesomeIcon icon={faQuestionCircle} className="pointer" title="Dopamin Index Explanation" />
+          {t('dopaminIndex')}{' '}
+          <a href="/settings/settings.html" target="_blank">
+            <FontAwesomeIcon
+              icon={faQuestionCircle}
+              className="pointer"
+              title="Dopamin Index Explanation"
+            />
           </a>
         </div>
         <div id="dopaminIndexValue">?</div>
       </div>
       <div className="report-issue">
-        <a href="mailto:ceo+focusmode@cothema.com" target="_blank">{t('reportIssue')}</a>
+        <a href="mailto:ceo+focusmode@cothema.com" target="_blank">
+          {t('reportIssue')}
+        </a>
       </div>
     </div>
-  )
+  );
 };
 
-const container = document.getElementById("popup-root");
+const container = document.getElementById('popup-root');
 if (container) {
   createRoot(container).render(<Popup />);
 }

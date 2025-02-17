@@ -35,7 +35,8 @@ button {
   color: black;
   margin-bottom: 10px;
 
-  &.enabled, &.enabled:hover {
+  &.enabled,
+  &.enabled:hover {
     background-color: #46af2e;
     color: #ffffff;
   }
@@ -44,7 +45,7 @@ button {
     background-color: #b1ff9f;
   }
 
-  &[data-mode="disabled"] {
+  &[data-mode='disabled'] {
     background-color: #aa0000;
     color: white;
     text-align: center !important;

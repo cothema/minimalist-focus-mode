@@ -7,7 +7,7 @@ module.exports = merge(common, {
   plugins: [
     new ZipPlugin({
       path: '../output',
-      filename: 'minimalist-focus-mode.zip'
+      filename: 'minimalist-focus-mode.zip',
     }),
   ],
 });

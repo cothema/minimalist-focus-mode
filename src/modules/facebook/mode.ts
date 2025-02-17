@@ -1,5 +1,5 @@
 /// <reference types="chrome" />
-import { hideElements, getSelectedMode } from "../../lib/utils";
+import { hideElements, getSelectedMode } from '../../lib/utils';
 
 type Selectors = {
   [key: string]: string[];
@@ -11,7 +11,7 @@ type ModeMappings = {
 
 const selectors: Selectors = {
   stories: ["[aria-label='stories tray']"],
-  footer: ["footer"],
+  footer: ['footer'],
 };
 
 const modeMappings: ModeMappings = {

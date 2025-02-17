@@ -1,6 +1,6 @@
 export const MODES = ['create', 'analytics', 'play', 'inspiration', 'networking'] as const;
 
-export type Mode = typeof MODES[number];
+export type Mode = (typeof MODES)[number];
 
 export type SettingsModes = Record<Mode, boolean>;
 

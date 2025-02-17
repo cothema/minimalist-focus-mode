@@ -6,7 +6,9 @@
   "scripts": {
     "watch": "webpack --watch --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "ai": "webpack --config webpack.ai.js"
+    "ai": "webpack --config webpack.ai.js",
+    "lint": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -48,6 +50,8 @@
     "mini-css-extract-plugin": "^2.9.2",
     "postcss": "^8.5.2",
     "postcss-loader": "^8.1.1",
+    "prettier": "3.5.1",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "sass": "^1.85.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",

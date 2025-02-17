@@ -3,9 +3,7 @@
   "name": "__MSG_extensionName__",
   "version": "0.2",
   "description": "__MSG_extensionDescription__",
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "default_locale": "en",
   "background": {
     "service_worker": "background.bundle.js"
@@ -89,30 +87,18 @@
   ],
   "content_scripts": [
     {
-      "matches": [
-        "*://*.facebook.com/*"
-      ],
-      "js": [
-        "facebook.bundle.js"
-      ],
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["facebook.bundle.js"],
       "run_at": "document_idle"
     },
     {
-      "matches": [
-        "*://*.linkedin.com/*"
-      ],
-      "js": [
-        "linkedin.bundle.js"
-      ],
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["linkedin.bundle.js"],
       "run_at": "document_idle"
     },
     {
-      "matches": [
-        "*://*.youtube.com/*"
-      ],
-      "js": [
-        "youtube.bundle.js"
-      ],
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["youtube.bundle.js"],
       "run_at": "document_idle"
     },
     {
@@ -141,9 +127,7 @@
         "*://*.blesk.cz/*",
         "*://*.expres.cz/*"
       ],
-      "js": [
-        "news.bundle.js"
-      ]
+      "js": ["news.bundle.js"]
     },
     {
       "matches": [
@@ -179,9 +163,7 @@
         "*://*.pornuj.cz/*",
         "*://*.amateri.com/*"
       ],
-      "js": [
-        "adult.bundle.js"
-      ]
+      "js": ["adult.bundle.js"]
     }
   ]
 }

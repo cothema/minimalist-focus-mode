@@ -1,5 +1,5 @@
 /// <reference types="chrome" />
-import { hideElements, getSelectedMode } from "../../lib/utils";
+import { hideElements, getSelectedMode } from '../../lib/utils';
 
 type Selectors = {
   hp: {
@@ -13,7 +13,7 @@ type ModeMappings = {
 
 const selectors: Selectors = {
   hp: {
-    contents: ["ytd-browse #contents"], // All recommended videos
+    contents: ['ytd-browse #contents'], // All recommended videos
   },
 };
 
