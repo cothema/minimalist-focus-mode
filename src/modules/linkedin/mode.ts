@@ -20,6 +20,9 @@ const selectors: Selectors = {
   shareBox: ['.share-box-feed-entry__closed-share-box'],
   feed: ['.scaffold-finite-scroll', '.feed-sort-toggle-dsa__wrapper'],
   sidebarMyPages: ['.org-organization-admin-pages-entrypoint-card__card'],
+  sidebarMyPagesNotifications: [
+    "a[href*='/admin/notifications/'].org-organization-admin-pages-entrypoint-card__link",
+  ],
   topMenu: ['.global-nav__nav'],
 };
 
@@ -35,6 +38,7 @@ const modeMappings: ModeMappings = {
     selectors.msgOverlay,
     selectors.feed,
     selectors.topMenu,
+    selectors.sidebarMyPagesNotifications,
   ],
   networking: [
     selectors.games,
@@ -43,6 +47,7 @@ const modeMappings: ModeMappings = {
     selectors.shareBox,
     selectors.feed,
     selectors.sidebarMyPages,
+    selectors.sidebarMyPagesNotifications,
   ],
   inspiration: [
     selectors.games,
@@ -56,6 +61,7 @@ const modeMappings: ModeMappings = {
     selectors.shareBox,
     selectors.sidebarMyPages,
     selectors.topMenu,
+    selectors.sidebarMyPagesNotifications,
   ],
   play: [
     selectors.adBanners,
@@ -69,8 +75,15 @@ const modeMappings: ModeMappings = {
     selectors.feed,
     selectors.sidebarMyPages,
     selectors.topMenu,
+    selectors.sidebarMyPagesNotifications,
   ],
 };
+
+const removeNotificationCount = () => {
+  document.title = document.title.replace(/^\(\d+\)\s*/, '');
+};
+
+removeNotificationCount();
 
 getSelectedMode((mode: keyof ModeMappings) => {
   hideElements(modeMappings[mode] || []);
@@ -80,4 +93,5 @@ new MutationObserver(() => {
   getSelectedMode((mode: keyof ModeMappings) => {
     hideElements(modeMappings[mode] || []);
   });
+  removeNotificationCount();
 }).observe(document.body, { childList: true, subtree: true });
