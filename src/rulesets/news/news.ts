@@ -1,4 +1,4 @@
-import { SettingsFilteredWebsites } from '../../lib/filteredWebsites';
+import { SettingsFilteredWebsites } from '../../lib/settings/filteredWebsites';
 
 function blockNewsPages() {
   chrome.storage.sync.get(['selectedMode'], (data: any) => {

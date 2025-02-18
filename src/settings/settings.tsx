@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { DEFAULT_SETTINGS_MODES, Mode, MODES, SettingsModes } from '../lib/modes';
+import { DEFAULT_SETTINGS_MODES, Mode, MODES, SettingsModes } from '../lib/settings/modes';
 import { t } from '../lib/i18n';
 import {
   DEFAULT_SETTINGS_FILTERED_WEBSITES,
   SettingsFilteredWebsites,
-} from '../lib/filteredWebsites';
+} from '../lib/settings/filteredWebsites';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
+import { DEFAULT_SETTINGS_TOOLS, SettingsTools, Tool } from '../lib/settings/tools';
 
 const Settings: React.FC = () => {
   const [settingsModes, setSettingsModes] = useState<SettingsModes>(DEFAULT_SETTINGS_MODES);
   const [settingsFilteredWebsites, setSettingsFilteredWebsites] =
     useState<SettingsFilteredWebsites>(DEFAULT_SETTINGS_FILTERED_WEBSITES);
+  const [settingsTools, setSettingsTools] = useState<SettingsTools>(DEFAULT_SETTINGS_TOOLS);
 
   useEffect(() => {
     chrome.storage.sync.get(['modeSettings'], (result: any) => {
@@ -35,6 +37,15 @@ const Settings: React.FC = () => {
         chrome.storage.sync.set({ filteredWebsitesSettings: DEFAULT_SETTINGS_FILTERED_WEBSITES });
       }
     });
+
+    chrome.storage.sync.get(['toolsSettings'], (result: any) => {
+      const data = result.toolsSettings as SettingsTools | undefined;
+      if (data) {
+        setSettingsTools(data);
+      } else {
+        chrome.storage.sync.set({ toolsSettings: DEFAULT_SETTINGS_TOOLS });
+      }
+    });
   }, []);
 
   const handleToggleModes = (mode: Mode) => {
@@ -44,6 +55,24 @@ const Settings: React.FC = () => {
     };
     setSettingsModes(updatedSettings);
     chrome.storage.sync.set({ modeSettings: updatedSettings });
+  };
+
+  const handleToggleTools = (tool: Tool) => {
+    const updatedSettings: SettingsTools = {
+      ...settingsTools,
+      [tool]: !settingsTools[tool],
+    };
+    setSettingsTools(updatedSettings);
+    chrome.storage.sync.set({ toolsSettings: updatedSettings });
+  };
+
+  const handleSetToolsValue = (tool: Tool, value: number) => {
+    const updatedSettings: SettingsTools = {
+      ...settingsTools,
+      [tool]: value,
+    };
+    setSettingsTools(updatedSettings);
+    chrome.storage.sync.set({ toolsSettings: updatedSettings });
   };
 
   const handleToggleFilteredWebsites = (filteredWebsite: string) => {
@@ -149,6 +178,35 @@ const Settings: React.FC = () => {
               </label>
             </div>
           ))}
+
+          <h2>Other tools</h2>
+          <label>
+            <input
+              type="checkbox"
+              checked={settingsTools.grayscale as boolean}
+              onChange={() => handleToggleTools('grayscale')}
+            />
+            Display Webpages in Grayscale
+            {settingsTools.grayscale && (
+              <>
+                :
+                <input
+                  type={'number'}
+                  min={0}
+                  max={100}
+                  className={'ms-2 me-2 rounded-sm bg-white text-center text-black'}
+                  value={settingsTools.grayscalePercentage as number}
+                  onChange={(e) => {
+                    const value = parseInt(e.target.value);
+                    if (value >= 0 && value <= 100) {
+                      handleSetToolsValue('grayscalePercentage', value);
+                    }
+                  }}
+                />
+                %
+              </>
+            )}
+          </label>
         </div>
 
         <footer>

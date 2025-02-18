@@ -1,5 +1,5 @@
 import { hideElements, getSelectedMode } from '../../lib/utils';
-import { SettingsFilteredWebsites } from '../../lib/filteredWebsites';
+import { SettingsFilteredWebsites } from '../../lib/settings/filteredWebsites';
 
 type Selectors = {
   hp: {

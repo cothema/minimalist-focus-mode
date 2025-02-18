@@ -14,6 +14,7 @@ module.exports = {
     github: './src/modules/github/mode.ts',
     news: './src/rulesets/news/news.ts',
     adult: './src/rulesets/adult/adult.ts',
+    grayscale: './src/transformations/grayscale/grayscale.ts',
     style: './src/style.scss',
     stylePopup: './src/popup/popup.scss',
   },
