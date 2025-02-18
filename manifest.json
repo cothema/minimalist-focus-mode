@@ -30,6 +30,7 @@
     "*://*.facebook.com/*",
     "*://*.linkedin.com/*",
     "*://*.youtube.com/*",
+    "*://*.github.com/*",
     "*://*.cnn.com/*",
     "*://*.bbc.com/*",
     "*://*.nytimes.com/*",
@@ -99,6 +100,11 @@
     {
       "matches": ["*://*.youtube.com/*"],
       "js": ["youtube.bundle.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://*.github.com/*"],
+      "js": ["github.bundle.js"],
       "run_at": "document_idle"
     },
     {

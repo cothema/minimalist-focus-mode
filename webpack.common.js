@@ -11,6 +11,7 @@ module.exports = {
     linkedin: './src/modules/linkedin/mode.ts',
     facebook: './src/modules/facebook/mode.ts',
     youtube: './src/modules/youtube/homepage.ts',
+    github: './src/modules/github/mode.ts',
     news: './src/rulesets/news/news.ts',
     adult: './src/rulesets/adult/adult.ts',
     style: './src/style.scss',

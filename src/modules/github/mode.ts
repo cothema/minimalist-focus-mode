@@ -10,19 +10,16 @@ type ModeMappings = {
 };
 
 const selectors: Selectors = {
-  stories: ["[aria-label='stories tray']"],
   footer: ['footer'],
-  notifications: [
-    'div[aria-expanded="false"][aria-label*="Notifications"][role="button"]',
-    'div[aria-hidden="true"][aria-label*="Notifications"][role="button"]',
-  ],
+  notifications: ['notification-indicator'],
+  feed: ['#dashboard feed-container'],
 };
 
 const modeMappings: ModeMappings = {
-  create: [selectors.stories, selectors.footer, selectors.notifications],
-  networking: [selectors.stories, selectors.footer, selectors.notifications],
+  create: [selectors.footer, selectors.feed, selectors.notifications],
+  networking: [selectors.footer, selectors.feed, selectors.notifications],
   inspiration: [selectors.footer, selectors.notifications],
-  play: [selectors.stories, selectors.footer, selectors.notifications],
+  play: [selectors.footer, selectors.feed, selectors.notifications],
 };
 
 const removeNotificationCount = () => {
@@ -31,7 +28,7 @@ const removeNotificationCount = () => {
 
 chrome.storage.sync.get(['filteredWebsitesSettings'], (result: any) => {
   const data = result.filteredWebsitesSettings as SettingsFilteredWebsites | undefined;
-  if (data?.facebook) {
+  if (data?.github) {
     removeNotificationCount();
 
     getSelectedMode((mode: keyof ModeMappings) => {

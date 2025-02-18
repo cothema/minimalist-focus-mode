@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons/faFacebookSquare';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons/faYoutube';
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 
 const Settings: React.FC = () => {
   const [settingsModes, setSettingsModes] = useState<SettingsModes>(DEFAULT_SETTINGS_MODES);
@@ -102,6 +103,17 @@ const Settings: React.FC = () => {
                 />
                 <FontAwesomeIcon icon={faYoutube} className={'me-2'} />
                 YouTube
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={settingsFilteredWebsites.github}
+                  onChange={() => handleToggleFilteredWebsites('github')}
+                />
+                <FontAwesomeIcon icon={faGithub} className={'me-2'} />
+                GitHub
               </label>
             </li>
           </ul>
